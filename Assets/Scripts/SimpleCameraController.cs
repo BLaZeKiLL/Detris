@@ -6,7 +6,7 @@
 
 using UnityEngine;
 
-namespace UnityTemplateProjects
+namespace CodeBlaze.Detris
 {
     public class SimpleCameraController : MonoBehaviour
     {

@@ -5,11 +5,21 @@
     <e p="C:\Users\BLaZeKiLL\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Detris.2083249063.00" t="ExcludeRecursive" />
     <e p="C:\Users\BLaZeKiLL\AppData\Roaming\JetBrains\Rider2020.2\scratches" t="IncludeRecursive" />
     <e p="D:\Solutions\Unity\Detris" t="IncludeRecursive">
-      <e p=".gitignore" t="Include" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="GradientTexture.cs" t="Include" />
+          <e p="Grid" t="Include">
+            <e p="SimpleGrid.cs" t="Include" />
+          </e>
           <e p="SimpleCameraController.cs" t="Include" />
+          <e p="Voxel" t="Include">
+            <e p="Block.cs" t="Include" />
+            <e p="Chunk.cs" t="Include" />
+            <e p="ChunkMono.cs" t="Include" />
+            <e p="MeshBuilder.cs" t="Include" />
+            <e p="MeshData.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Detris.sln" t="IncludeFlat" />
