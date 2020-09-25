@@ -6,7 +6,7 @@ namespace CodeBlaze.Detris.Voxel {
 
     public class Chunk {
 
-        public static readonly Vector3Int SIZE = new Vector3Int(3,3,3);
+        public static readonly Vector3Int SIZE = new Vector3Int(3,10,2);
 
         public Vector3Int Position { get; }
         

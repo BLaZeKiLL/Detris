@@ -52,7 +52,7 @@ namespace CodeBlaze.Detris.Voxel {
                     
                     // Compute the mask
                     for (chunkItr[axis2] = 0; chunkItr[axis2] < axis2Limit; ++chunkItr[axis2]) {
-                        for (chunkItr[axis1] = 0; chunkItr[axis1] < axis2Limit; ++chunkItr[axis1]) {
+                        for (chunkItr[axis1] = 0; chunkItr[axis1] < axis1Limit; ++chunkItr[axis1]) {
                             bool blockCurrent = 0 <= chunkItr[direction] ? 
                                 chunk.GetBlock(
                                     chunkItr[0],
@@ -104,7 +104,7 @@ namespace CodeBlaze.Detris.Voxel {
                                     // Check each block next to this quad
                                     for (k = 0; k < width; ++k) {
                                         // If there's a hole in the mask, exit
-                                        if (mask[n + k + height * axis2Limit] != currentMask) {
+                                        if (mask[n + k + height * axis1Limit] != currentMask) {
                                             done = true;
                                             break;
                                         }
@@ -133,7 +133,7 @@ namespace CodeBlaze.Detris.Voxel {
                                 // Clear this part of the mask, so we don't add duplicate faces
                                 for (l = 0; l < height; ++l)
                                     for (k = 0; k < width; ++k)
-                                        mask[n + k + l * axis2Limit] = 0;
+                                        mask[n + k + l * axis1Limit] = 0;
 
                                 i += width;
                                 n += width;

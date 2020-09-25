@@ -20,30 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/SimpleGrid.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/SimpleGrid.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader/Grid.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shader/Grid.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader/GridXY.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shader/GridXY.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader/GridXZ.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shader/GridXZ.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader/GridYZ.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shader/GridYZ.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,9 +45,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" />
       </list>
     </option>
   </component>
@@ -130,8 +110,17 @@
       <workItem from="1600869955631" duration="5932000" />
       <workItem from="1600885247838" duration="667000" />
       <workItem from="1600922984685" duration="9152000" />
-      <workItem from="1600965132607" duration="373000" />
+      <workItem from="1600965132607" duration="687000" />
+      <workItem from="1601012928952" duration="355000" />
     </task>
+    <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
+      <created>1600965789060</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600965789060</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,11 +143,17 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Greedy Mesher Implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Greedy Mesher Implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="669" y="123" key="RiderGenerateDialog" timestamp="1600870017771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="669" y="123" key="RiderGenerateDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1600870017771" />
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1600965791376">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1600965791376" />
   </component>
 </project>
