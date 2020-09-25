@@ -84,7 +84,11 @@ namespace CodeBlaze.Detris.Voxel {
                     for (j = 0; j < axis2Limit; j++) {
                         for (i = 0; i < axis1Limit;) {
                             if (mask[n] != 0) {
+                                // Current Stuff
                                 sbyte currentMask = mask[n];
+                                chunkItr[axis1] = i;
+                                chunkItr[axis2] = j;
+                                
                                 // Compute the width of this quad and store it in w                        
                                 // This is done by searching along the current axis until mask[n + w] is false
                                 for (width = 1; i + width < axis1Limit && mask[n + width] == currentMask; width++) { }
@@ -107,9 +111,6 @@ namespace CodeBlaze.Detris.Voxel {
                                     }
                                     if (done) break;
                                 }
-
-                                chunkItr[axis1] = i;
-                                chunkItr[axis2] = j;
 
                                 var deltaAxis1 = new int[3];
                                 deltaAxis1[axis1] = width;

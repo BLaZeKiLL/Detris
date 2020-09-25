@@ -20,10 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +31,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/MeshBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/MeshBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/ChunkMono.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/GradientTexture.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/ChunkMono.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/MeshBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/f2/fc52694a/UInt32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/Block.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
