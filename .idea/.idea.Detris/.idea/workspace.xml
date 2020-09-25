@@ -21,7 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" afterDir="false" />
     </list>
@@ -33,6 +34,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/f2/fc52694a/UInt32.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -41,13 +45,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid/SimpleGridOne.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid/SimpleGrid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid/GridOverlay.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block/Block.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" />
       </list>
     </option>
   </component>
@@ -111,7 +115,7 @@
       <workItem from="1600885247838" duration="667000" />
       <workItem from="1600922984685" duration="9152000" />
       <workItem from="1600965132607" duration="687000" />
-      <workItem from="1601012928952" duration="355000" />
+      <workItem from="1601012928952" duration="4040000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -120,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600965789060</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="non-uniform mesh builder">
+      <created>1601013888557</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601013888557</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,16 +155,17 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Greedy Mesher Implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Greedy Mesher Implemented" />
+    <MESSAGE value="non-uniform mesh builder" />
+    <option name="LAST_COMMIT_MESSAGE" value="non-uniform mesh builder" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="669" y="123" key="RiderGenerateDialog" timestamp="1600870017771">
+    <state x="669" y="123" key="RiderGenerateDialog" timestamp="1601018570448">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="669" y="123" key="RiderGenerateDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1600870017771" />
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1600965791376">
+    <state x="669" y="123" key="RiderGenerateDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601018570448" />
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601013893869">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1600965791376" />
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601013893869" />
   </component>
 </project>

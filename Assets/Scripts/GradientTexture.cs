@@ -15,7 +15,6 @@ namespace CodeBlaze.Detris {
         private RawImage _img;
 
         private void Awake() {
-            Debug.Log(_colors.Length);
             _img = GetComponent<RawImage>();
             _bg = new Texture2D(1, _colors.Length) {
                 wrapMode = TextureWrapMode.Clamp,

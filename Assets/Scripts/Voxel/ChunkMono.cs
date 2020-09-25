@@ -24,14 +24,16 @@ namespace CodeBlaze.Detris.Voxel {
                 }
             }
 
+            Debug.Log(new Block(255,255,255,255).ToInt());
+            
             _meshBuilder = new MeshBuilder();
 
             var _filter = GetComponent<MeshFilter>();
 
             var data = _meshBuilder.GenerateMesh(_chunk);
 
-            Debug.Log(data.Vertices.Length);
-            Debug.Log(data.Triangles.Length);
+            Debug.Log($"Vertex Count : {data.Vertices.Length}");
+            Debug.Log($"Triangle Count : {data.Triangles.Length}");
 
             var mesh = _filter.mesh;
             mesh.vertices = data.Vertices;

@@ -7,7 +7,7 @@ using UnityEngine;
 namespace CodeBlaze.Detris.Voxel {
 
     public class MeshBuilder {
-        
+
         private readonly List<Vector3> vertices;
         private readonly List<int> triangles;
         private readonly List<Color32> colors;
@@ -65,9 +65,7 @@ namespace CodeBlaze.Detris.Voxel {
                                     chunkItr[1] + directionMask[1],
                                     chunkItr[2] + directionMask[2])
                                     .IsSolid() : false; // check neighbour in +ve axis
-
-                            Debug.Log($"ITR : {chunkItr[direction]}, Current : {blockCurrent} , Compare : {blockCompare}");
-
+                            
                             if (blockCurrent == blockCompare) {
                                 mask[n++] = 0;
                             } else if (blockCurrent) {
@@ -77,8 +75,6 @@ namespace CodeBlaze.Detris.Voxel {
                             }
                         }
                     }
-
-                    //Debug.Log(string.Join(", ",mask.ToList().ConvertAll(x => x.ToString())));
                     
                     ++chunkItr[direction];
                     n = 0;
