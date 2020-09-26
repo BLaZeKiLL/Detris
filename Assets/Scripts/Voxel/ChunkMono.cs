@@ -11,21 +11,24 @@ namespace CodeBlaze.Detris.Voxel {
         
         private void Start() {
             _chunk = new Chunk(Vector3Int.zero);
+            var position = transform.position;
+            
+            for (int x = 0; x < Chunk.SIZE.x; x++) {
+                for (int z = 0; z < Chunk.SIZE.z; z++) {
+                    var height = Mathf.FloorToInt(
+                        Mathf.PerlinNoise((position.x + x) * 0.15f, (position.z + z) * 0.15f) * Chunk.SIZE.y
+                    );
 
-            for (int i = 0; i < Chunk.SIZE.x; i++) {
-                for (int j = 0; j < Chunk.SIZE.y; j++) {
-                    for (int k = 0; k < Chunk.SIZE.z; k++) {
-                        if (k == 1 && i == 1 && j == 9) {
-                            _chunk.SetBlock(BlockTypes.Air(), i, j, k);
-                        } else if (j < 5) {
-                            _chunk.SetBlock(BlockTypes.Green(), i, j, k);
-                        } else {
-                            _chunk.SetBlock(BlockTypes.Red(), i, j, k);
-                        }
+                    for (int y = 0; y < height; y++) {
+                        _chunk.SetBlock(BlockTypes.Green(), x,y,z);
+                    }
+                    
+                    for (int y = height; y < Chunk.SIZE.y; y++) {
+                        _chunk.SetBlock(BlockTypes.Air(), x,y,z);
                     }
                 }
             }
-            
+
             _meshBuilder = new MeshBuilder();
 
             var _filter = GetComponent<MeshFilter>();
