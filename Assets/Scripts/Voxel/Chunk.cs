@@ -31,7 +31,7 @@ namespace CodeBlaze.Detris.Voxel {
 
         public Block GetBlock(int x, int y, int z) {
             return !ContainsIndex(x,y,z) ? 
-                Block.Air() : 
+                BlockTypes.Air() : 
                 _blocks[FlattenIndex(x,y,z)];
         }
         

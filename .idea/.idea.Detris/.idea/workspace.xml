@@ -20,7 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/GridXY.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/GridXY.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/GridXZ.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/GridXZ.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/GridYZ.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/GridYZ.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/LightingData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/LightingData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/ReflectionProbe-0.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/ReflectionProbe-0.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shader/VertexColor.shadergraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shader/VertexColor.shadergraph.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shader/GridXY.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shader/GridXY.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shader/GridXZ.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shader/GridXZ.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shader/GridYZ.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shader/GridYZ.mat.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,14 +55,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/MeshBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/MeshBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/ChunkMono.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/GradientTexture.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/ChunkMono.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/MeshBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/6f/e60f3cb1/ValueType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A9810827-DCE3-444A-8E5C-4E9F3F5E0828/12/8a04e4dd/Color32.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/f2/fc52694a/UInt32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Solutions/Unity/Detris/Assets/Scripts/Voxel/Block.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -50,11 +69,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid/GridOverlay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" />
       </list>
     </option>
   </component>
@@ -119,6 +138,7 @@
       <workItem from="1600922984685" duration="9152000" />
       <workItem from="1600965132607" duration="687000" />
       <workItem from="1601012928952" duration="4040000" />
+      <workItem from="1601100263846" duration="6865000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -134,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601013888557</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="main scene renamed">
+      <created>1601035685040</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1601035685040</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,16 +186,17 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Greedy Mesher Implemented" />
     <MESSAGE value="non-uniform mesh builder" />
-    <option name="LAST_COMMIT_MESSAGE" value="non-uniform mesh builder" />
+    <MESSAGE value="main scene renamed" />
+    <option name="LAST_COMMIT_MESSAGE" value="main scene renamed" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="669" y="123" key="RiderGenerateDialog" timestamp="1601018570448">
+    <state x="669" y="123" key="RiderGenerateDialog" timestamp="1601103540263">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="669" y="123" key="RiderGenerateDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601018570448" />
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601013893869">
+    <state x="669" y="123" key="RiderGenerateDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601103540263" />
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601035686962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601013893869" />
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601035686962" />
   </component>
 </project>

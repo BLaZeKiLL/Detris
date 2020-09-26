@@ -1,12 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 using UnityEngine;
 
 namespace CodeBlaze.Detris.Voxel {
 
     public class MeshBuilder {
+
+        private readonly struct Mask {
+
+            public readonly Color32 color;
+            public readonly sbyte normal;
+
+            public Mask(sbyte normal, Color32 color) {
+                this.color = color;
+                this.normal = normal;
+            }
+
+            public static bool operator ==(Mask m1, Mask m2) {
+                return m1.normal == m2.normal && m1.color.r == m2.color.r && m1.color.g == m2.color.g && m1.color.b == m2.color.b;
+            }
+
+            public static bool operator !=(Mask m1, Mask m2) {
+                return !(m1 == m2);
+            }
+
+        }
 
         private readonly List<Vector3> vertices;
         private readonly List<int> triangles;
@@ -43,7 +61,7 @@ namespace CodeBlaze.Detris.Voxel {
                 var chunkItr = new int[3];
                 var directionMask = new int[3];
 
-                var mask = new sbyte[axis1Limit * axis2Limit];
+                var mask = new Mask[axis1Limit * axis2Limit];
                 directionMask[direction] = 1;
 
                 // Check each slice of the chunk one at a time
@@ -53,25 +71,27 @@ namespace CodeBlaze.Detris.Voxel {
                     // Compute the mask
                     for (chunkItr[axis2] = 0; chunkItr[axis2] < axis2Limit; ++chunkItr[axis2]) {
                         for (chunkItr[axis1] = 0; chunkItr[axis1] < axis1Limit; ++chunkItr[axis1]) {
-                            bool blockCurrent = 0 <= chunkItr[direction] ? 
-                                chunk.GetBlock(
-                                    chunkItr[0],
-                                    chunkItr[1],
-                                    chunkItr[2])
-                                    .IsSolid() : false; // check neighbour in -ve axis
-                            bool blockCompare = chunkItr[direction] < mainAxisLimit - 1 ?
-                                chunk.GetBlock(
-                                    chunkItr[0] + directionMask[0],
-                                    chunkItr[1] + directionMask[1],
-                                    chunkItr[2] + directionMask[2])
-                                    .IsSolid() : false; // check neighbour in +ve axis
+                            var currentBlock = chunk.GetBlock(
+                                chunkItr[0],
+                                chunkItr[1],
+                                chunkItr[2]
+                            );
+
+                            var compareBlock = chunk.GetBlock(
+                                chunkItr[0] + directionMask[0],
+                                chunkItr[1] + directionMask[1],
+                                chunkItr[2] + directionMask[2]
+                            );
+                            
+                            bool blockCurrent = 0 <= chunkItr[direction] ? currentBlock.IsSolid() : false; // check neighbour in -ve axis
+                            bool blockCompare = chunkItr[direction] < mainAxisLimit - 1 ? compareBlock.IsSolid() : false; // check neighbour in +ve axis
                             
                             if (blockCurrent == blockCompare) {
-                                mask[n++] = 0;
+                                mask[n++] = new Mask(0, Color.magenta);
                             } else if (blockCurrent) {
-                                mask[n++] = 1;
+                                mask[n++] = new Mask(1, currentBlock.GetColor());
                             } else {
-                                mask[n++] = -1;
+                                mask[n++] = new Mask(-1, compareBlock.GetColor());
                             }
                         }
                     }
@@ -83,9 +103,9 @@ namespace CodeBlaze.Detris.Voxel {
                     // by looping over each block in this slice of the chunk
                     for (j = 0; j < axis2Limit; j++) {
                         for (i = 0; i < axis1Limit;) {
-                            if (mask[n] != 0) {
+                            if (mask[n].normal != 0) {
                                 // Current Stuff
-                                sbyte currentMask = mask[n];
+                                var currentMask = mask[n];
                                 chunkItr[axis1] = i;
                                 chunkItr[axis2] = j;
                                 
@@ -130,7 +150,7 @@ namespace CodeBlaze.Detris.Voxel {
                                 // Clear this part of the mask, so we don't add duplicate faces
                                 for (l = 0; l < height; ++l)
                                     for (k = 0; k < width; ++k)
-                                        mask[n + k + l * axis1Limit] = 0;
+                                        mask[n + k + l * axis1Limit] = new Mask(0,Color.magenta);
 
                                 i += width;
                                 n += width;
@@ -160,20 +180,25 @@ namespace CodeBlaze.Detris.Voxel {
         // v2 -> TL
         // v3 -> BR
         // v4 -> TR
-        private void CreateQuad(sbyte mask, Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4) {
+        private void CreateQuad(Mask mask, Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4) {
             vertices.Add(v1);
             vertices.Add(v2);
             vertices.Add(v3);
             vertices.Add(v4);
 
-            if (mask == 1) {
+            colors.Add(mask.color);
+            colors.Add(mask.color);
+            colors.Add(mask.color);
+            colors.Add(mask.color);
+            
+            if (mask.normal == 1) {
                 triangles.Add(index);
                 triangles.Add(index + 1);
                 triangles.Add(index + 3);
                 triangles.Add(index);
                 triangles.Add(index + 3);
                 triangles.Add(index + 2);
-            } else if (mask == -1) {
+            } else if (mask.normal == -1) {
                 triangles.Add(index);
                 triangles.Add(index + 3);
                 triangles.Add(index + 1);

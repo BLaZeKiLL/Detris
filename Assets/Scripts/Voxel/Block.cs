@@ -33,8 +33,18 @@ namespace CodeBlaze.Detris.Voxel {
         
         public Color32 GetColor() => new Color32(R, G, B, A);
 
+    }
+
+    public static class BlockTypes {
+
         public static Block Air() => new Block(0,0,0,0);
         
+        public static Block Red() => new Block(255, 0, 0, 255);
+        
+        public static Block Green() => new Block(0, 255, 0, 255);
+        
+        public static Block Blue() => new Block(0, 0, 255, 255);
+
     }
 
 }

@@ -12,19 +12,19 @@ namespace CodeBlaze.Detris.Voxel {
         private void Start() {
             _chunk = new Chunk(Vector3Int.zero);
 
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 10; j++) {
-                    for (int k = 0; k < 2; k++) {
+            for (int i = 0; i < Chunk.SIZE.x; i++) {
+                for (int j = 0; j < Chunk.SIZE.y; j++) {
+                    for (int k = 0; k < Chunk.SIZE.z; k++) {
                         if (k == 1 && i == 1 && j == 9) {
-                            _chunk.SetBlock(new Block(255, 255, 255, 0), i, j, k);
+                            _chunk.SetBlock(BlockTypes.Air(), i, j, k);
+                        } else if (j < 5) {
+                            _chunk.SetBlock(BlockTypes.Green(), i, j, k);
                         } else {
-                            _chunk.SetBlock(new Block(255, 255, 255, 255), i, j, k);
+                            _chunk.SetBlock(BlockTypes.Red(), i, j, k);
                         }
                     }
                 }
             }
-
-            Debug.Log(new Block(255,255,255,255).ToInt());
             
             _meshBuilder = new MeshBuilder();
 
@@ -38,6 +38,7 @@ namespace CodeBlaze.Detris.Voxel {
             var mesh = _filter.mesh;
             mesh.vertices = data.Vertices;
             mesh.triangles = data.Triangles;
+            mesh.colors32 = data.Colors;
             _filter.mesh.RecalculateNormals();
         }
 
