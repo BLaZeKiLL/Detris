@@ -20,7 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +41,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/6f/e60f3cb1/ValueType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A9810827-DCE3-444A-8E5C-4E9F3F5E0828/12/8a04e4dd/Color32.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/f2/fc52694a/UInt32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A9810827-DCE3-444A-8E5C-4E9F3F5E0828/ee/10ba4a7d/Mesh.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -44,12 +52,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid/SimpleGrid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid/GridOverlay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block/Block.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" />
       </list>
     </option>
   </component>
@@ -114,7 +122,8 @@
       <workItem from="1600922984685" duration="9152000" />
       <workItem from="1600965132607" duration="687000" />
       <workItem from="1601012928952" duration="4040000" />
-      <workItem from="1601100263846" duration="7454000" />
+      <workItem from="1601100263846" duration="10694000" />
+      <workItem from="1601134064290" duration="2335000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -144,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601116659049</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Noise Map Done">
+      <created>1601119021494</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1601119021494</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,16 +187,17 @@
     <MESSAGE value="non-uniform mesh builder" />
     <MESSAGE value="main scene renamed" />
     <MESSAGE value="Vertex Color Shader and Mesh Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vertex Color Shader and Mesh Done" />
+    <MESSAGE value="Noise Map Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Noise Map Done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="669" y="123" key="RiderGenerateDialog" timestamp="1601103540263">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="669" y="123" key="RiderGenerateDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601103540263" />
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601116668545">
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601119098934">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601116668545" />
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601119098934" />
   </component>
 </project>

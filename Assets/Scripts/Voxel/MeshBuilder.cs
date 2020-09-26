@@ -29,6 +29,7 @@ namespace CodeBlaze.Detris.Voxel {
         private readonly List<Vector3> vertices;
         private readonly List<int> triangles;
         private readonly List<Color32> colors;
+        private readonly List<Vector3> normals;
 
         private int index;
         
@@ -36,11 +37,10 @@ namespace CodeBlaze.Detris.Voxel {
             vertices = new List<Vector3>();
             triangles = new List<int>();
             colors = new List<Color32>();
+            normals = new List<Vector3>();
         }
 
         public MeshData GenerateMesh(Chunk chunk) {
-            index = 0;
-            
             // Sweep over each axis (X, Y and Z)
             for (int direction = 0; direction < 3; direction++) {
                 int i, // loop var
@@ -141,6 +141,7 @@ namespace CodeBlaze.Detris.Voxel {
                                 // create quad
                                 CreateQuad(
                                     currentMask,
+                                    directionMask,
                                     new Vector3(chunkItr[0], chunkItr[1], chunkItr[2]),
                                     new Vector3(chunkItr[0] + deltaAxis1[0], chunkItr[1] + deltaAxis1[1], chunkItr[2] + deltaAxis1[2]),
                                     new Vector3(chunkItr[0] + deltaAxis2[0], chunkItr[1] + deltaAxis2[1], chunkItr[2] + deltaAxis2[2]),
@@ -166,12 +167,14 @@ namespace CodeBlaze.Detris.Voxel {
             var data = new MeshData(
                 vertices.ToArray(),
                 triangles.ToArray(),
-                colors.ToArray()
+                colors.ToArray(),
+                normals.ToArray()
             );
 
             vertices.Clear();
             triangles.Clear();
             colors.Clear();
+            index = 0;
 
             return data;
         }
@@ -180,7 +183,7 @@ namespace CodeBlaze.Detris.Voxel {
         // v2 -> TL
         // v3 -> BR
         // v4 -> TR
-        private void CreateQuad(Mask mask, Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4) {
+        private void CreateQuad(Mask mask, int[] directionMask, Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4) {
             vertices.Add(v1);
             vertices.Add(v2);
             vertices.Add(v3);
@@ -190,6 +193,17 @@ namespace CodeBlaze.Detris.Voxel {
             colors.Add(mask.color);
             colors.Add(mask.color);
             colors.Add(mask.color);
+            
+            var normal = new Vector3(
+                mask.normal * directionMask[0],
+                mask.normal * directionMask[1],
+                mask.normal * directionMask[2]
+                );
+            
+            normals.Add(normal);
+            normals.Add(normal);
+            normals.Add(normal);
+            normals.Add(normal);
             
             if (mask.normal == 1) {
                 triangles.Add(index);
@@ -206,7 +220,7 @@ namespace CodeBlaze.Detris.Voxel {
                 triangles.Add(index + 2);
                 triangles.Add(index + 3);
             }
-
+            
             index += 4;
         }
     }

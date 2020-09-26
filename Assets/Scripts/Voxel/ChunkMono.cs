@@ -6,6 +6,10 @@ namespace CodeBlaze.Detris.Voxel {
 
     public class ChunkMono : MonoBehaviour {
 
+        [SerializeField]
+        [Range(0.01f, 0.99f)]
+        private float _frequency = 0.1f;
+        
         private Chunk _chunk;
         private MeshBuilder _meshBuilder;
         
@@ -16,7 +20,7 @@ namespace CodeBlaze.Detris.Voxel {
             for (int x = 0; x < Chunk.SIZE.x; x++) {
                 for (int z = 0; z < Chunk.SIZE.z; z++) {
                     var height = Mathf.FloorToInt(
-                        Mathf.PerlinNoise((position.x + x) * 0.15f, (position.z + z) * 0.15f) * Chunk.SIZE.y
+                        Mathf.PerlinNoise((position.x + x) * _frequency, (position.z + z) * _frequency) * Chunk.SIZE.y
                     );
 
                     for (int y = 0; y < height; y++) {
@@ -37,12 +41,14 @@ namespace CodeBlaze.Detris.Voxel {
 
             Debug.Log($"Vertex Count : {data.Vertices.Length}");
             Debug.Log($"Triangle Count : {data.Triangles.Length}");
-
+            Debug.Log(BlockTypes.Air().IsSolid());
+            
             var mesh = _filter.mesh;
             mesh.vertices = data.Vertices;
             mesh.triangles = data.Triangles;
             mesh.colors32 = data.Colors;
-            _filter.mesh.RecalculateNormals();
+            mesh.normals = data.Normals;
+            //_filter.mesh.RecalculateNormals();
         }
 
     }
