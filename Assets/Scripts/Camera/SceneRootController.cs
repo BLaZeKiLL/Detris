@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace CodeBlaze.Detris.Camera {
 
-    public class CameraController : MonoBehaviour {
+    public class SceneRootController : MonoBehaviour {
 
         [SerializeField] [Range(0.5f, 5f)] private float _rotationDuration = 1f;
 
@@ -26,14 +26,14 @@ namespace CodeBlaze.Detris.Camera {
         }
 
         private void SwipeLeft(object sender, TouchInputManager.SwipeEventArgs e) {
-            _rotation += Vector3.up * 90;
+            _rotation += Vector3.up * -90;
             if (Math.Abs(_rotation.y - 360) < float.Epsilon) _rotation = Vector3.zero;
             Debug.Log(_rotation);
             transform.DORotate(_rotation, _rotationDuration);
         }
 
         private void SwipeRight(object sender, TouchInputManager.SwipeEventArgs e) {
-            _rotation += Vector3.up * -90;
+            _rotation += Vector3.up * 90;
             if (Math.Abs(_rotation.y + 360) < float.Epsilon) _rotation = Vector3.zero;
             Debug.Log(_rotation);
             transform.DORotate(_rotation, _rotationDuration);

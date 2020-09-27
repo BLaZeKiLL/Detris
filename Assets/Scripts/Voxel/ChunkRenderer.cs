@@ -2,12 +2,16 @@
 
 namespace CodeBlaze.Detris.Voxel {
 
-    public class ChunkMono : MonoBehaviour {
+    public class ChunkRenderer : MonoBehaviour {
 
         [SerializeField] [Range(0.01f, 0.99f)] private float _frequency = 0.1f;
 
         private Chunk _chunk;
         private MeshBuilder _meshBuilder;
+
+        private void Awake() {
+            transform.position = new Vector3(-(float) Chunk.SIZE.x / 2, 0f, -(float) Chunk.SIZE.z / 2);
+        }
 
         private void Start() {
             _chunk = new Chunk(Vector3Int.zero);
