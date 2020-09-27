@@ -20,14 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Input.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Input/TouchInputManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Input/TouchInputManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +53,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid/SimpleGridOne.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid/SimpleGrid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid/GridOverlay.cs" />
@@ -55,9 +60,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Input/TouchInputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
       </list>
     </option>
   </component>
@@ -123,7 +131,8 @@
       <workItem from="1600965132607" duration="687000" />
       <workItem from="1601012928952" duration="4040000" />
       <workItem from="1601100263846" duration="10694000" />
-      <workItem from="1601134064290" duration="2335000" />
+      <workItem from="1601134064290" duration="3215000" />
+      <workItem from="1601193548514" duration="4834000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -160,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601119021494</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="normal generation">
+      <created>1601138218981</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601138218981</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,16 +204,17 @@
     <MESSAGE value="main scene renamed" />
     <MESSAGE value="Vertex Color Shader and Mesh Done" />
     <MESSAGE value="Noise Map Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Noise Map Done" />
+    <MESSAGE value="normal generation" />
+    <option name="LAST_COMMIT_MESSAGE" value="normal generation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="669" y="123" key="RiderGenerateDialog" timestamp="1601103540263">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="669" y="123" key="RiderGenerateDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601103540263" />
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601119098934">
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601138222089">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601119098934" />
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601138222089" />
   </component>
 </project>

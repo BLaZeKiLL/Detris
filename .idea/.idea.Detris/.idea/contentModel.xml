@@ -8,9 +8,15 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Camera" t="Include">
+            <e p="CameraController.cs" t="Include" />
+          </e>
           <e p="GradientTexture.cs" t="Include" />
           <e p="Grid" t="Include">
             <e p="SimpleGrid.cs" t="Include" />
+          </e>
+          <e p="Input" t="Include">
+            <e p="TouchInputManager.cs" t="Include" />
           </e>
           <e p="SimpleCameraController.cs" t="Include" />
           <e p="Voxel" t="Include">
