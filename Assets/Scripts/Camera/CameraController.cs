@@ -1,39 +1,42 @@
 ﻿using System;
 
+using CodeBlaze.Detris.Input;
+
+using DG.Tweening;
+
 using UnityEngine;
 
 namespace CodeBlaze.Detris.Camera {
 
     public class CameraController : MonoBehaviour {
 
+        [SerializeField] [Range(0.5f, 5f)] private float _rotationDuration = 1f;
+
+        private Vector3 _rotation;
+
         private void Start() {
-            TouchInputManager.SwipeUp += SwipeUp;
-            TouchInputManager.SwipeDown += SwipeDown;
+            _rotation = Vector3.zero;
             TouchInputManager.SwipeRight += SwipeRight;
             TouchInputManager.SwipeLeft += SwipeLeft;
         }
 
         private void OnDestroy() {
-            TouchInputManager.SwipeUp -= SwipeUp;
-            TouchInputManager.SwipeDown -= SwipeDown;
             TouchInputManager.SwipeRight -= SwipeRight;
             TouchInputManager.SwipeLeft -= SwipeLeft;
         }
 
         private void SwipeLeft(object sender, TouchInputManager.SwipeEventArgs e) {
-            throw new NotImplementedException();
+            _rotation += Vector3.up * 90;
+            if (Math.Abs(_rotation.y - 360) < float.Epsilon) _rotation = Vector3.zero;
+            Debug.Log(_rotation);
+            transform.DORotate(_rotation, _rotationDuration);
         }
 
         private void SwipeRight(object sender, TouchInputManager.SwipeEventArgs e) {
-            throw new NotImplementedException();
-        }
-
-        private void SwipeDown(object sender, TouchInputManager.SwipeEventArgs e) {
-            throw new NotImplementedException();
-        }
-
-        private void SwipeUp(object sender, TouchInputManager.SwipeEventArgs e) {
-            throw new NotImplementedException();
+            _rotation += Vector3.up * -90;
+            if (Math.Abs(_rotation.y + 360) < float.Epsilon) _rotation = Vector3.zero;
+            Debug.Log(_rotation);
+            transform.DORotate(_rotation, _rotationDuration);
         }
 
     }

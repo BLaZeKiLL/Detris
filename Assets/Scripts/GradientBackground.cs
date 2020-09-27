@@ -1,16 +1,13 @@
-﻿using System;
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace CodeBlaze.Detris {
 
     [RequireComponent(typeof(RawImage))]
-    public class GradientTexture : MonoBehaviour {
+    public class GradientBackground : MonoBehaviour {
 
-        [SerializeField]
-        private Color[] _colors;
-        
+        [SerializeField] private Color[] _colors;
+
         private Texture2D _bg;
         private RawImage _img;
 

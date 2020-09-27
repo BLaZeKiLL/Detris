@@ -2,24 +2,33 @@
 
 using UnityEngine;
 
-namespace CodeBlaze.Detris {
+namespace CodeBlaze.Detris.Input {
 
     public class TouchInputManager : MonoBehaviour {
 
-        [SerializeField] private float _swipeThreshold = 20f;
+        [SerializeField] private float _swipeThreshold = 10f;
 
         private Vector2 _fingerDown;
         private Vector2 _fingerUp;
 
-        private void Update() {
-            foreach (var touch in Input.touches) {
-                if (touch.phase == TouchPhase.Began) {
-                    _fingerDown = touch.position;
-                }
+        private bool _swiping;
 
-                if (touch.phase == TouchPhase.Ended) {
-                    _fingerUp = touch.position;
-                    CheckSwipe();
+        private void Update() {
+            foreach (var touch in UnityEngine.Input.touches) {
+                switch (touch.phase) {
+                    case TouchPhase.Began:
+                        _fingerDown = touch.position;
+
+                        break;
+                    case TouchPhase.Moved:
+                        _fingerUp = touch.position;
+                        CheckSwipe();
+
+                        break;
+                    case TouchPhase.Ended:
+                        _swiping = false;
+
+                        break;
                 }
             }
         }
@@ -30,41 +39,39 @@ namespace CodeBlaze.Detris {
         public static event EventHandler<SwipeEventArgs> SwipeRight;
 
         private void CheckSwipe() {
+            if (_swiping) return;
+
             var verticalMovement = Mathf.Abs(_fingerDown.y - _fingerUp.y);
             var horizontalMovement = Mathf.Abs(_fingerDown.x - _fingerUp.x);
 
             if (verticalMovement > _swipeThreshold && verticalMovement > horizontalMovement) {
-                if (_fingerDown.y - _fingerUp.y > 0) //Up swipe
-                {
-                    Debug.Log($"Up Swipe : START : {_fingerDown} END : {_fingerUp}");
+                if (_fingerDown.y - _fingerUp.y > 0) {
                     SwipeUp?.Invoke(this, new SwipeEventArgs {
                         StartPosition = _fingerDown,
                         EndPosition = _fingerUp
                     });
-                } else if (_fingerDown.y - _fingerUp.y < 0) //Down swipe
-                {
-                    Debug.Log($"Down Swipe : START : {_fingerDown} END : {_fingerUp}");
+                } else if (_fingerDown.y - _fingerUp.y < 0) {
                     SwipeDown?.Invoke(this, new SwipeEventArgs {
                         StartPosition = _fingerDown,
                         EndPosition = _fingerUp
                     });
                 }
+
+                _swiping = true;
             } else if (horizontalMovement > _swipeThreshold && horizontalMovement > verticalMovement) {
-                if (_fingerDown.x - _fingerUp.x > 0) //Right swipe
-                {
-                    Debug.Log($"Right Swipe : START : {_fingerDown} END : {_fingerUp}");
+                if (_fingerDown.x - _fingerUp.x > 0) {
                     SwipeRight?.Invoke(this, new SwipeEventArgs {
                         StartPosition = _fingerDown,
                         EndPosition = _fingerUp
                     });
-                } else if (_fingerDown.x - _fingerUp.x < 0) //Left swipe
-                {
-                    Debug.Log($"Left Swipe : START : {_fingerDown} END : {_fingerUp}");
+                } else if (_fingerDown.x - _fingerUp.x < 0) {
                     SwipeLeft?.Invoke(this, new SwipeEventArgs {
                         StartPosition = _fingerDown,
                         EndPosition = _fingerUp
                     });
                 }
+
+                _swiping = true;
             }
         }
 

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 namespace CodeBlaze.Detris.Voxel {
 
@@ -18,6 +17,7 @@ namespace CodeBlaze.Detris.Voxel {
         }
 
         public bool IsSolid() => A == byte.MaxValue;
+
         public bool IsEmpty() => A == byte.MinValue;
 
         public uint ToInt() {
@@ -28,22 +28,31 @@ namespace CodeBlaze.Detris.Voxel {
             x += B;
             x <<= 8;
             x += A;
+
             return x;
         }
-        
+
         public Color32 GetColor() => new Color32(R, G, B, A);
 
     }
 
     public static class BlockTypes {
 
-        public static Block Air() => new Block(0,0,0,0);
-        
+        public static Block Air() => new Block(0, 0, 0, 0);
+
         public static Block Red() => new Block(255, 0, 0, 255);
-        
+
         public static Block Green() => new Block(0, 255, 0, 255);
-        
+
         public static Block Blue() => new Block(0, 0, 255, 255);
+
+        public static Block RandomSolid() {
+            var r = (byte) Random.Range(0, 256);
+            var g = (byte) Random.Range(0, 256);
+            var b = (byte) Random.Range(0, 256);
+
+            return new Block(r, g, b, 255);
+        }
 
     }
 

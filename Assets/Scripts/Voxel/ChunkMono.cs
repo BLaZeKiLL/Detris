@@ -20,7 +20,7 @@ namespace CodeBlaze.Detris.Voxel {
                     );
 
                     for (int y = 0; y < height; y++) {
-                        _chunk.SetBlock(BlockTypes.Green(), x, y, z);
+                        _chunk.SetBlock(BlockTypes.RandomSolid(), x, y, z);
                     }
 
                     for (int y = height; y < Chunk.SIZE.y; y++) {
@@ -43,7 +43,6 @@ namespace CodeBlaze.Detris.Voxel {
             mesh.triangles = data.Triangles;
             mesh.colors32 = data.Colors;
             mesh.normals = data.Normals;
-            //_filter.mesh.RecalculateNormals();
         }
 
     }
