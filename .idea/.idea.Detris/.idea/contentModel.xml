@@ -25,9 +25,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Camera" t="Include">
-            <e p="SceneRootController.cs" t="Include" />
-          </e>
           <e p="GradientBackground.cs" t="Include" />
           <e p="Grid" t="Include">
             <e p="SimpleGrid.cs" t="Include" />
@@ -35,12 +32,14 @@
           <e p="Input" t="Include">
             <e p="TouchInputManager.cs" t="Include" />
           </e>
+          <e p="SceneRootController.cs" t="Include" />
           <e p="Voxel" t="Include">
             <e p="Block.cs" t="Include" />
             <e p="Chunk.cs" t="Include" />
             <e p="ChunkRenderer.cs" t="Include" />
             <e p="MeshBuilder.cs" t="Include" />
             <e p="MeshData.cs" t="Include" />
+            <e p="Shapes.cs" t="Include" />
           </e>
         </e>
       </e>

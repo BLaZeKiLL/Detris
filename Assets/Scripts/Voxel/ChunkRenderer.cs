@@ -10,12 +10,9 @@ namespace CodeBlaze.Detris.Voxel {
         private Chunk _chunk;
         private MeshBuilder _meshBuilder;
 
-        private void Awake() {
-            transform.position = new Vector3(-(float) Chunk.SIZE.x / 2, 0f, -(float) Chunk.SIZE.z / 2);
-        }
-
         private void Start() {
-            _chunk = new Chunk(Vector3Int.zero);
+            _chunk = new Chunk(new Vector3Int(4, 10, 4), Vector3Int.zero);
+            transform.position = new Vector3(-(float) Chunk.SIZE.x / 2, 0f, -(float) Chunk.SIZE.z / 2);
             var position = transform.position;
 
             // Height Map

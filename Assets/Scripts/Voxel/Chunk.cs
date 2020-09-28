@@ -6,11 +6,12 @@ namespace CodeBlaze.Detris.Voxel {
 
     public class Chunk {
 
-        public static readonly Vector3Int SIZE = new Vector3Int(3, 10, 3);
+        public static Vector3Int SIZE = Vector3Int.zero;
 
         private Block[] _blocks;
 
-        public Chunk(Vector3Int position) {
+        public Chunk(Vector3Int size, Vector3Int position) {
+            SIZE = size;
             Position = position;
             _blocks = new Block[SIZE.x * SIZE.y * SIZE.z];
         }

@@ -20,11 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Shapes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Shapes.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GradientBackground.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/TouchInputManager.cs" />
@@ -60,10 +60,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SceenRootController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SceneRootController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Shapes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshBuilder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Shapes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" />
       </list>
     </option>
   </component>
@@ -133,7 +135,7 @@
       <workItem from="1601193548514" duration="11499000" />
       <workItem from="1601231517212" duration="458000" />
       <workItem from="1601287878711" duration="295000" />
-      <workItem from="1601288204391" duration="1848000" />
+      <workItem from="1601288204391" duration="6617000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -205,7 +207,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601288454529</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Block Structure Simplified">
+      <created>1601290429189</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1601290429189</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Camera Namespace Removed">
+      <created>1601292611603</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1601292611603</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +255,9 @@
     <MESSAGE value="Camera Rotation Around Chunk Done" />
     <MESSAGE value="Scene Root Rotator Done" />
     <MESSAGE value="rotation bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="rotation bug fix" />
+    <MESSAGE value="Block Structure Simplified" />
+    <MESSAGE value="Camera Namespace Removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Camera Namespace Removed" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -257,9 +275,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601231899114" />
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601288462264">
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601293581993">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601288462264" />
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601293581993" />
   </component>
 </project>
