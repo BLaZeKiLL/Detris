@@ -14,7 +14,7 @@ namespace CodeBlaze.Detris.Voxel.Renderer {
         private MeshBuilder _meshBuilder;
 
         private void Start() {
-            _chunk = new Chunk(new Vector3Int(4, 10, 4), Vector3Int.zero);
+            _chunk = new Chunk(new Vector3Int(4, 10, 4));
             transform.position = new Vector3(-(float) Chunk.SIZE.x / 2, 0f, -(float) Chunk.SIZE.z / 2);
             var position = transform.position;
 

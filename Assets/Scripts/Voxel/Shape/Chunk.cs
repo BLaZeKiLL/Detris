@@ -10,13 +10,10 @@ namespace CodeBlaze.Detris.Voxel.Shape {
 
         private Block[] _blocks;
 
-        public Chunk(Vector3Int size, Vector3Int position) {
+        public Chunk(Vector3Int size) {
             SIZE = size;
-            Position = position;
             _blocks = new Block[SIZE.x * SIZE.y * SIZE.z];
         }
-
-        public Vector3Int Position { get; }
 
         public void SetBlock(Block block, Vector3Int index) => SetBlock(block, index.x, index.y, index.z);
 
