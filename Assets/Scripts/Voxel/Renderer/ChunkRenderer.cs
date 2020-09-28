@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿using CodeBlaze.Detris.Voxel.Mesh;
+using CodeBlaze.Detris.Voxel.Shape;
 
-namespace CodeBlaze.Detris.Voxel {
+using UnityEngine;
+
+namespace CodeBlaze.Detris.Voxel.Renderer {
 
     public class ChunkRenderer : MonoBehaviour {
 

@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 
+using CodeBlaze.Detris.Voxel.Shape;
+
 using UnityEngine;
 
-namespace CodeBlaze.Detris.Voxel {
+namespace CodeBlaze.Detris.Voxel.Mesh {
 
     public class MeshBuilder {
 
@@ -21,7 +23,7 @@ namespace CodeBlaze.Detris.Voxel {
             normals = new List<Vector3>();
         }
 
-        public MeshData GenerateMesh(Chunk chunk) {
+        public MeshData GenerateMesh(Chunk shape) {
             // Sweep over each axis (X, Y and Z)
             for (int direction = 0; direction < 3; direction++) {
                 int i, // loop var
@@ -52,13 +54,13 @@ namespace CodeBlaze.Detris.Voxel {
                     // Compute the mask
                     for (chunkItr[axis2] = 0; chunkItr[axis2] < axis2Limit; ++chunkItr[axis2]) {
                         for (chunkItr[axis1] = 0; chunkItr[axis1] < axis1Limit; ++chunkItr[axis1]) {
-                            var currentBlock = chunk.GetBlock(
+                            var currentBlock = shape.GetBlock(
                                 chunkItr[0],
                                 chunkItr[1],
                                 chunkItr[2]
                             );
 
-                            var compareBlock = chunk.GetBlock(
+                            var compareBlock = shape.GetBlock(
                                 chunkItr[0] + directionMask[0],
                                 chunkItr[1] + directionMask[1],
                                 chunkItr[2] + directionMask[2]
