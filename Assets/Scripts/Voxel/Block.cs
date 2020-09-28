@@ -4,54 +4,34 @@ namespace CodeBlaze.Detris.Voxel {
 
     public struct Block {
 
-        public byte R { get; }
-        public byte G { get; }
-        public byte B { get; }
-        public byte A { get; }
+        public Color32 Color { get; }
 
-        public Block(byte r, byte g, byte b, byte a) {
-            R = r;
-            G = g;
-            B = b;
-            A = a;
+        public Block(Color32 color) {
+            Color = color;
         }
 
-        public bool IsSolid() => A == byte.MaxValue;
+        public bool IsSolid() => Color.a == byte.MaxValue;
 
-        public bool IsEmpty() => A == byte.MinValue;
-
-        public uint ToInt() {
-            uint x = R;
-            x <<= 8;
-            x += G;
-            x <<= 8;
-            x += B;
-            x <<= 8;
-            x += A;
-
-            return x;
-        }
-
-        public Color32 GetColor() => new Color32(R, G, B, A);
+        public bool IsEmpty() => Color.a == byte.MinValue;
 
     }
 
     public static class BlockTypes {
 
-        public static Block Air() => new Block(0, 0, 0, 0);
+        public static Block Air() => new Block(new Color32(0, 0, 0, 0));
 
-        public static Block Red() => new Block(255, 0, 0, 255);
+        public static Block Red() => new Block(new Color32(255, 0, 0, 255));
 
-        public static Block Green() => new Block(0, 255, 0, 255);
+        public static Block Green() => new Block(new Color32(0, 255, 0, 255));
 
-        public static Block Blue() => new Block(0, 0, 255, 255);
+        public static Block Blue() => new Block(new Color32(0, 0, 255, 255));
 
         public static Block RandomSolid() {
             var r = (byte) Random.Range(0, 256);
             var g = (byte) Random.Range(0, 256);
             var b = (byte) Random.Range(0, 256);
 
-            return new Block(r, g, b, 255);
+            return new Block(new Color32(r, g, b, 255));
         }
 
     }

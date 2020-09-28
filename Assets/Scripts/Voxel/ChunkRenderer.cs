@@ -4,6 +4,7 @@ namespace CodeBlaze.Detris.Voxel {
 
     public class ChunkRenderer : MonoBehaviour {
 
+        // For Height Map
         [SerializeField] [Range(0.01f, 0.99f)] private float _frequency = 0.1f;
 
         private Chunk _chunk;
@@ -17,6 +18,7 @@ namespace CodeBlaze.Detris.Voxel {
             _chunk = new Chunk(Vector3Int.zero);
             var position = transform.position;
 
+            // Height Map
             for (int x = 0; x < Chunk.SIZE.x; x++) {
                 for (int z = 0; z < Chunk.SIZE.z; z++) {
                     var height = Mathf.FloorToInt(

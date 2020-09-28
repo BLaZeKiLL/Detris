@@ -6,33 +6,14 @@ namespace CodeBlaze.Detris.Voxel {
 
     public class MeshBuilder {
 
-        private readonly struct Mask {
-
-            public readonly Color32 color;
-            public readonly sbyte normal;
-
-            public Mask(sbyte normal, Color32 color) {
-                this.color = color;
-                this.normal = normal;
-            }
-
-            public static bool operator ==(Mask m1, Mask m2) {
-                return m1.normal == m2.normal && m1.color.r == m2.color.r && m1.color.g == m2.color.g && m1.color.b == m2.color.b;
-            }
-
-            public static bool operator !=(Mask m1, Mask m2) {
-                return !(m1 == m2);
-            }
-
-        }
-
-        private readonly List<Vector3> vertices;
-        private readonly List<int> triangles;
         private readonly List<Color32> colors;
         private readonly List<Vector3> normals;
+        private readonly List<int> triangles;
+
+        private readonly List<Vector3> vertices;
 
         private int index;
-        
+
         public MeshBuilder() {
             vertices = new List<Vector3>();
             triangles = new List<int>();
@@ -67,7 +48,7 @@ namespace CodeBlaze.Detris.Voxel {
                 // Check each slice of the chunk one at a time
                 for (chunkItr[direction] = -1; chunkItr[direction] < mainAxisLimit;) {
                     var n = 0;
-                    
+
                     // Compute the mask
                     for (chunkItr[axis2] = 0; chunkItr[axis2] < axis2Limit; ++chunkItr[axis2]) {
                         for (chunkItr[axis1] = 0; chunkItr[axis1] < axis1Limit; ++chunkItr[axis1]) {
@@ -82,23 +63,28 @@ namespace CodeBlaze.Detris.Voxel {
                                 chunkItr[1] + directionMask[1],
                                 chunkItr[2] + directionMask[2]
                             );
-                            
-                            bool blockCurrent = 0 <= chunkItr[direction] ? currentBlock.IsSolid() : false; // check neighbour in -ve axis
-                            bool blockCompare = chunkItr[direction] < mainAxisLimit - 1 ? compareBlock.IsSolid() : false; // check neighbour in +ve axis
-                            
+
+                            bool blockCurrent =
+                                0 <= chunkItr[direction]
+                                    ? currentBlock.IsSolid()
+                                    : false; // check neighbour in -ve axis
+                            bool blockCompare = chunkItr[direction] < mainAxisLimit - 1
+                                ? compareBlock.IsSolid()
+                                : false; // check neighbour in +ve axis
+
                             if (blockCurrent == blockCompare) {
                                 mask[n++] = new Mask(0, Color.magenta);
                             } else if (blockCurrent) {
-                                mask[n++] = new Mask(1, currentBlock.GetColor());
+                                mask[n++] = new Mask(1, currentBlock.Color);
                             } else {
-                                mask[n++] = new Mask(-1, compareBlock.GetColor());
+                                mask[n++] = new Mask(-1, compareBlock.Color);
                             }
                         }
                     }
-                    
+
                     ++chunkItr[direction];
                     n = 0;
-                    
+
                     // Generate a mesh from the mask using lexicographic ordering,      
                     // by looping over each block in this slice of the chunk
                     for (j = 0; j < axis2Limit; j++) {
@@ -108,11 +94,11 @@ namespace CodeBlaze.Detris.Voxel {
                                 var currentMask = mask[n];
                                 chunkItr[axis1] = i;
                                 chunkItr[axis2] = j;
-                                
+
                                 // Compute the width of this quad and store it in w                        
                                 // This is done by searching along the current axis until mask[n + w] is false
                                 for (width = 1; i + width < axis1Limit && mask[n + width] == currentMask; width++) { }
-                                
+
                                 // Compute the height of this quad and store it in h                        
                                 // This is done by checking if every block next to this row (range 0 to w) is also part of the mask.
                                 // For example, if w is 5 we currently have a quad of dimensions 1 x 5. To reduce triangle count,
@@ -126,9 +112,11 @@ namespace CodeBlaze.Detris.Voxel {
                                         // If there's a hole in the mask, exit
                                         if (mask[n + k + height * axis1Limit] != currentMask) {
                                             done = true;
+
                                             break;
                                         }
                                     }
+
                                     if (done) break;
                                 }
 
@@ -143,15 +131,19 @@ namespace CodeBlaze.Detris.Voxel {
                                     currentMask,
                                     directionMask,
                                     new Vector3(chunkItr[0], chunkItr[1], chunkItr[2]),
-                                    new Vector3(chunkItr[0] + deltaAxis1[0], chunkItr[1] + deltaAxis1[1], chunkItr[2] + deltaAxis1[2]),
-                                    new Vector3(chunkItr[0] + deltaAxis2[0], chunkItr[1] + deltaAxis2[1], chunkItr[2] + deltaAxis2[2]),
-                                    new Vector3(chunkItr[0] + deltaAxis1[0] + deltaAxis2[0], chunkItr[1] + deltaAxis1[1] + deltaAxis2[1], chunkItr[2] + deltaAxis1[2] + deltaAxis2[2])
+                                    new Vector3(chunkItr[0] + deltaAxis1[0], chunkItr[1] + deltaAxis1[1],
+                                        chunkItr[2] + deltaAxis1[2]),
+                                    new Vector3(chunkItr[0] + deltaAxis2[0], chunkItr[1] + deltaAxis2[1],
+                                        chunkItr[2] + deltaAxis2[2]),
+                                    new Vector3(chunkItr[0] + deltaAxis1[0] + deltaAxis2[0],
+                                        chunkItr[1] + deltaAxis1[1] + deltaAxis2[1],
+                                        chunkItr[2] + deltaAxis1[2] + deltaAxis2[2])
                                 );
-                                
+
                                 // Clear this part of the mask, so we don't add duplicate faces
                                 for (l = 0; l < height; ++l)
                                     for (k = 0; k < width; ++k)
-                                        mask[n + k + l * axis1Limit] = new Mask(0,Color.magenta);
+                                        mask[n + k + l * axis1Limit] = new Mask(0, Color.magenta);
 
                                 i += width;
                                 n += width;
@@ -163,7 +155,7 @@ namespace CodeBlaze.Detris.Voxel {
                     }
                 }
             }
-            
+
             var data = new MeshData(
                 vertices.ToArray(),
                 triangles.ToArray(),
@@ -193,18 +185,18 @@ namespace CodeBlaze.Detris.Voxel {
             colors.Add(mask.color);
             colors.Add(mask.color);
             colors.Add(mask.color);
-            
+
             var normal = new Vector3(
                 mask.normal * directionMask[0],
                 mask.normal * directionMask[1],
                 mask.normal * directionMask[2]
-                );
-            
+            );
+
             normals.Add(normal);
             normals.Add(normal);
             normals.Add(normal);
             normals.Add(normal);
-            
+
             if (mask.normal == 1) {
                 triangles.Add(index);
                 triangles.Add(index + 1);
@@ -220,9 +212,31 @@ namespace CodeBlaze.Detris.Voxel {
                 triangles.Add(index + 2);
                 triangles.Add(index + 3);
             }
-            
+
             index += 4;
         }
+
+        private readonly struct Mask {
+
+            public readonly Color32 color;
+            public readonly sbyte normal;
+
+            public Mask(sbyte normal, Color32 color) {
+                this.color = color;
+                this.normal = normal;
+            }
+
+            public static bool operator ==(Mask m1, Mask m2) {
+                return m1.normal == m2.normal && m1.color.r == m2.color.r && m1.color.g == m2.color.g &&
+                    m1.color.b == m2.color.b;
+            }
+
+            public static bool operator !=(Mask m1, Mask m2) {
+                return !(m1 == m2);
+            }
+
+        }
+
     }
 
 }
