@@ -21,14 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/SceenRootController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/SceenRootController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkRenderer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/SceneRootController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/SceneRootController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +60,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SceenRootController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SceneRootController.cs" />
       </list>
     </option>
   </component>
@@ -91,7 +86,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -133,7 +128,8 @@
       <workItem from="1601100263846" duration="10694000" />
       <workItem from="1601134064290" duration="3215000" />
       <workItem from="1601193548514" duration="11499000" />
-      <workItem from="1601231517212" duration="310000" />
+      <workItem from="1601231517212" duration="458000" />
+      <workItem from="1601287878711" duration="295000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -191,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601209903695</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Scene Root Rotator Done">
+      <created>1601231886813</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1601231886813</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +226,8 @@
     <MESSAGE value="normal generation" />
     <MESSAGE value="Touch Input and DoTween Added" />
     <MESSAGE value="Camera Rotation Around Chunk Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Camera Rotation Around Chunk Done" />
+    <MESSAGE value="Scene Root Rotator Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scene Root Rotator Done" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -233,13 +237,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="669" y="123" key="RiderGenerateDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601103540263" />
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1601206270993">
+    <state x="460" y="163" key="SettingsEditor" timestamp="1601288170935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601206270993" />
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601209914489">
+    <state x="460" y="163" key="SettingsEditor/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601288170935" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1601231899114">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601209914489" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601231899114" />
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601231888328">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601231888328" />
   </component>
 </project>

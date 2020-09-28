@@ -27,15 +27,13 @@ namespace CodeBlaze.Detris.Camera {
 
         private void SwipeLeft(object sender, TouchInputManager.SwipeEventArgs e) {
             _rotation += Vector3.up * -90;
-            if (Math.Abs(_rotation.y - 360) < float.Epsilon) _rotation = Vector3.zero;
-            Debug.Log(_rotation);
+            if (Math.Abs(_rotation.y + 360) < float.Epsilon) _rotation = Vector3.zero;
             transform.DORotate(_rotation, _rotationDuration);
         }
 
         private void SwipeRight(object sender, TouchInputManager.SwipeEventArgs e) {
             _rotation += Vector3.up * 90;
-            if (Math.Abs(_rotation.y + 360) < float.Epsilon) _rotation = Vector3.zero;
-            Debug.Log(_rotation);
+            if (Math.Abs(_rotation.y - 360) < float.Epsilon) _rotation = Vector3.zero;
             transform.DORotate(_rotation, _rotationDuration);
         }
 
