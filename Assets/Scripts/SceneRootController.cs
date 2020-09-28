@@ -6,7 +6,7 @@ using DG.Tweening;
 
 using UnityEngine;
 
-namespace CodeBlaze.Detris.Camera {
+namespace CodeBlaze.Detris {
 
     public class SceneRootController : MonoBehaviour {
 
