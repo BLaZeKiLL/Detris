@@ -1,10 +1,12 @@
 ﻿name: License Activation
+
 on:
   workflow_dispatch:
     inputs:
       unityVersion:
         description: Version of unity to request license for
         required: true
+        
 jobs:
   activation:
     name: Request activation file 🔑
