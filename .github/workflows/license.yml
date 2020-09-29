@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       UnityVersion:
-        descriptions: 'Version of unity to request license for'
+        description: Version of unity to request license for
         required: true
 jobs:
   activation:
