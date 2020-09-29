@@ -31,7 +31,7 @@ jobs:
           path: Library
           key: Library-${{ matrix.targetPlatform }}
           restore-keys: Library-
-      - uses: webbertakken/unity-builder@v1
+      - uses: webbertakken/unity-builder@v1.4
         with:
           versioning: Semantic
           unityVersion: ${{ matrix.unityVersion }}
