@@ -1,0 +1,22 @@
+﻿name: License Activation
+on: 
+  workflow_dispatch:
+    inputs:
+      UnityVersion:
+        descriptions: 'Version of unity to request license for'
+        required: true
+jobs:
+  activation:
+    name: Request activation file 🔑
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request activation file
+        id: getManualLicenseFile
+        uses: webbertakken/unity-request-manual-activation-file@v1.1
+        with:
+          unityVersion: ${{ github.events.inputs.UnityVersion }}
+      - name: Upload license
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
+          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
