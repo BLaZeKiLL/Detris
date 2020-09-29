@@ -30,7 +30,8 @@ jobs:
         with:
           path: Library
           key: Library-${{ matrix.targetPlatform }}
-          restore-keys: Library-
+      - name: Enviornment info
+        run: printenv
       - uses: webbertakken/unity-builder@v1.4
         with:
           versioning: Semantic
