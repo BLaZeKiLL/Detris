@@ -1,4 +1,4 @@
-﻿name: License Activation
+﻿﻿name: License Activation
 on: 
   workflow_dispatch:
     inputs:
