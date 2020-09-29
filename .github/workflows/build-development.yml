@@ -19,7 +19,7 @@ jobs:
       fail-fast: false
       matrix:
         unityVersion:
-          - 2020.1.6f
+          - 2020.1.6f1
         targetPlatform:
           - Android
     steps:
