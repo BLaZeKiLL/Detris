@@ -16,7 +16,7 @@ jobs:
     name: Build for ${{ matrix.targetPlatform }} with unity version ${{ matrix.unityVersion }}
     runs-on: ubuntu-latest
     strategy:
-      fail_fast: false
+      fail-fast: false
       matrix:
         unityVersion:
           - 2020.1.6f
