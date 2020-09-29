@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/license.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/license.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/license.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/license.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +74,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Shape/Shapes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" />
         <option value="$PROJECT_DIR$/.github/license.yml" />
+        <option value="$PROJECT_DIR$/.github/workflows/license.yml" />
       </list>
     </option>
   </component>
@@ -144,7 +145,7 @@
       <workItem from="1601231517212" duration="458000" />
       <workItem from="1601287878711" duration="295000" />
       <workItem from="1601288204391" duration="16429000" />
-      <workItem from="1601353866630" duration="2962000" />
+      <workItem from="1601353866630" duration="3444000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
