@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build-development.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build-development.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,7 +145,7 @@
       <workItem from="1601231517212" duration="458000" />
       <workItem from="1601287878711" duration="295000" />
       <workItem from="1601288204391" duration="16429000" />
-      <workItem from="1601353866630" duration="9716000" />
+      <workItem from="1601353866630" duration="10411000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -292,6 +289,10 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="551" y="159" key="#Plugins" timestamp="1601376142881">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="551" y="159" key="#Plugins/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601376142881" />
     <state x="669" y="123" key="RiderGenerateDialog" timestamp="1601103540263">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
