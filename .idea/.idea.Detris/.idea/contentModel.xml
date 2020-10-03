@@ -39,6 +39,7 @@
           </e>
           <e p="SceneRootController.cs" t="Include" />
           <e p="Shape" t="Include">
+            <e p="Shape.cs" t="Include" />
             <e p="ShapeController.cs" t="Include" />
           </e>
           <e p="Voxel" t="Include">

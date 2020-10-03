@@ -12,13 +12,16 @@ namespace CodeBlaze.Detris.Voxel.Renderer {
 
         private MeshFilter _filter;
         private MeshBuilder _meshBuilder;
-        
+
+        public Chunk Chunk { get; private set; }
+
         private void Awake() {
             _filter = GetComponent<MeshFilter>();
             _meshBuilder = new MeshBuilder();
         }
 
         public void Render(Chunk chunk) {
+            Chunk = chunk;
             var data = _meshBuilder.GenerateMesh(chunk);
             var mesh = _filter.mesh;
             

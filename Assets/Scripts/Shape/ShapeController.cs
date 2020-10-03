@@ -14,22 +14,28 @@ namespace CodeBlaze.Detris.Shape {
         [SerializeField]
         private Material _material;
 
-        private LazyObjectPool<ShapeRenderer> _shapePool;
+        [SerializeField]
+        private Shape.Config _shapeConfig;
+        
+        private LazyObjectPool<GameObject> _shapePool;
 
         private void Awake() {
-            _shapePool = new LazyObjectPool<ShapeRenderer>(
+            _shapePool = new LazyObjectPool<GameObject>(
                 5, 
                 index => {
-                    var go = new GameObject("Shape", typeof(ShapeRenderer));
+                    var go = new GameObject("Shape", typeof(ShapeRenderer), typeof(Shape));
+                    
                     go.SetActive(false);
                     go.transform.parent = transform;
+                    go.transform.position = Vector3.up * _shapeConfig.SpawnHeight;
                     
                     go.GetComponent<MeshRenderer>().material = _material;
+                    go.GetComponent<Shape>().UpdateConfig(_shapeConfig);
 
-                    return go.GetComponent<ShapeRenderer>();
+                    return go;
                 },
-                shapeRenderer => shapeRenderer.gameObject.SetActive(true),
-                shapeRenderer => shapeRenderer.gameObject.SetActive(false)
+                go => go.SetActive(true),
+                go => go.SetActive(false)
             );
         }
 
@@ -41,7 +47,7 @@ namespace CodeBlaze.Detris.Shape {
                 Shapes.I(new Color32(220,220,220,255)),
             });
             
-            _shapePool.Claim().Render(bag.GetItem());
+            _shapePool.Claim().GetComponent<ShapeRenderer>().Render(bag.GetItem());
         }
 
     }
