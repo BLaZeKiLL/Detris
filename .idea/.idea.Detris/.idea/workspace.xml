@@ -20,19 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Editor/Build.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Editor/Build/AndroidBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Editor/Build/AndroidBuilder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Shape/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Shape/Chunk.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Shape/Shapes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Shape/Shapes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Build/AndroidBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Build/AndroidBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +33,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7DAE2265-1EDF-474E-AD4A-B15FA947A891/16/8d3a344a/FileUtil.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7DAE2265-1EDF-474E-AD4A-B15FA947A891/05/1ab699e0/BuildTargetGroup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Common/ObjectPools.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -77,12 +69,12 @@
         <option value="$PROJECT_DIR$/.github/workflows/license.yml" />
         <option value="$PROJECT_DIR$/.github/workflows/build.yml" />
         <option value="$PROJECT_DIR$/.github/workflows/build-development.yml" />
-        <option value="$PROJECT_DIR$/Assets/Editor/Build/AndroidBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Shape/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Shape/Shapes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/Build/AndroidBuilder.cs" />
       </list>
     </option>
   </component>
@@ -157,7 +149,7 @@
       <workItem from="1601353866630" duration="10411000" />
       <workItem from="1601657300971" duration="1847000" />
       <workItem from="1601666339525" duration="531000" />
-      <workItem from="1601709066323" duration="1961000" />
+      <workItem from="1601709066323" duration="6543000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
