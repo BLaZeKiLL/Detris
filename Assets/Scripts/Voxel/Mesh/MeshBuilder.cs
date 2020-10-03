@@ -23,7 +23,7 @@ namespace CodeBlaze.Detris.Voxel.Mesh {
             normals = new List<Vector3>();
         }
 
-        public MeshData GenerateMesh(Chunk shape) {
+        public MeshData GenerateMesh(Chunk chunk) {
             // Sweep over each axis (X, Y and Z)
             for (int direction = 0; direction < 3; direction++) {
                 int i, // loop var
@@ -37,9 +37,9 @@ namespace CodeBlaze.Detris.Voxel.Mesh {
                 int axis1 = (direction + 1) % 3;
                 int axis2 = (direction + 2) % 3;
 
-                int mainAxisLimit = Chunk.SIZE[direction];
-                int axis1Limit = Chunk.SIZE[axis1];
-                int axis2Limit = Chunk.SIZE[axis2];
+                int mainAxisLimit = chunk.Size[direction];
+                int axis1Limit = chunk.Size[axis1];
+                int axis2Limit = chunk.Size[axis2];
 
                 var chunkItr = new int[3];
                 var directionMask = new int[3];
@@ -54,13 +54,13 @@ namespace CodeBlaze.Detris.Voxel.Mesh {
                     // Compute the mask
                     for (chunkItr[axis2] = 0; chunkItr[axis2] < axis2Limit; ++chunkItr[axis2]) {
                         for (chunkItr[axis1] = 0; chunkItr[axis1] < axis1Limit; ++chunkItr[axis1]) {
-                            var currentBlock = shape.GetBlock(
+                            var currentBlock = chunk.GetBlock(
                                 chunkItr[0],
                                 chunkItr[1],
                                 chunkItr[2]
                             );
 
-                            var compareBlock = shape.GetBlock(
+                            var compareBlock = chunk.GetBlock(
                                 chunkItr[0] + directionMask[0],
                                 chunkItr[1] + directionMask[1],
                                 chunkItr[2] + directionMask[2]
@@ -183,22 +183,6 @@ namespace CodeBlaze.Detris.Voxel.Mesh {
             vertices.Add(v3);
             vertices.Add(v4);
 
-            colors.Add(mask.color);
-            colors.Add(mask.color);
-            colors.Add(mask.color);
-            colors.Add(mask.color);
-
-            var normal = new Vector3(
-                mask.normal * directionMask[0],
-                mask.normal * directionMask[1],
-                mask.normal * directionMask[2]
-            );
-
-            normals.Add(normal);
-            normals.Add(normal);
-            normals.Add(normal);
-            normals.Add(normal);
-
             if (mask.normal == 1) {
                 triangles.Add(index);
                 triangles.Add(index + 1);
@@ -216,6 +200,22 @@ namespace CodeBlaze.Detris.Voxel.Mesh {
             }
 
             index += 4;
+            
+            var normal = new Vector3(
+                mask.normal * directionMask[0],
+                mask.normal * directionMask[1],
+                mask.normal * directionMask[2]
+            );
+
+            normals.Add(normal);
+            normals.Add(normal);
+            normals.Add(normal);
+            normals.Add(normal);
+            
+            colors.Add(mask.color);
+            colors.Add(mask.color);
+            colors.Add(mask.color);
+            colors.Add(mask.color);
         }
 
         private readonly struct Mask {
@@ -229,7 +229,10 @@ namespace CodeBlaze.Detris.Voxel.Mesh {
             }
 
             public static bool operator ==(Mask m1, Mask m2) {
-                return m1.normal == m2.normal && m1.color.r == m2.color.r && m1.color.g == m2.color.g &&
+                return 
+                    m1.normal == m2.normal && 
+                    m1.color.r == m2.color.r && 
+                    m1.color.g == m2.color.g &&
                     m1.color.b == m2.color.b;
             }
 

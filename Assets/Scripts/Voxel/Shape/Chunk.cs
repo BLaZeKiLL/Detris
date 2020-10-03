@@ -6,13 +6,13 @@ namespace CodeBlaze.Detris.Voxel.Shape {
 
     public class Chunk {
 
-        public static Vector3Int SIZE = Vector3Int.zero;
+        public Vector3Int Size { get; }
 
         private Block[] _blocks;
 
         public Chunk(Vector3Int size) {
-            SIZE = size;
-            _blocks = new Block[SIZE.x * SIZE.y * SIZE.z];
+            Size = size;
+            _blocks = new Block[Size.x * Size.y * Size.z];
         }
 
         public void SetBlock(Block block, Vector3Int index) => SetBlock(block, index.x, index.y, index.z);
@@ -32,14 +32,28 @@ namespace CodeBlaze.Detris.Voxel.Shape {
         }
 
         private int FlattenIndex(int x, int y, int z) =>
-            y * SIZE.x * SIZE.z +
-            z * SIZE.x +
+            y * Size.x * Size.z +
+            z * Size.x +
             x;
 
         private bool ContainsIndex(int x, int y, int z) =>
-            x >= 0 && x < SIZE.x &&
-            y >= 0 && y < SIZE.y &&
-            z >= 0 && z < SIZE.z;
+            x >= 0 && x < Size.x &&
+            y >= 0 && y < Size.y &&
+            z >= 0 && z < Size.z;
+
+    }
+
+    public static class ChunkExtensions {
+
+        public static void Fill(this Chunk chunk, Block block) {
+            for (int x = 0; x < chunk.Size.x; x++) {
+                for (int y = 0; y < chunk.Size.y; y++) {
+                    for (int z = 0; z < chunk.Size.z; z++) {
+                        chunk.SetBlock(block, x, y, z);
+                    }
+                }
+            }
+        }
 
     }
 

@@ -15,21 +15,22 @@ namespace CodeBlaze.Detris.Voxel.Renderer {
 
         private void Start() {
             _chunk = new Chunk(new Vector3Int(4, 10, 4));
-            transform.position = new Vector3(-(float) Chunk.SIZE.x / 2, 0f, -(float) Chunk.SIZE.z / 2);
-            var position = transform.position;
+            var _transform = transform;
+            _transform.position = new Vector3(-(float) _chunk.Size.x / 2, 0f, -(float) _chunk.Size.z / 2);
+            var position = _transform.position;
 
             // Height Map
-            for (int x = 0; x < Chunk.SIZE.x; x++) {
-                for (int z = 0; z < Chunk.SIZE.z; z++) {
+            for (int x = 0; x < _chunk.Size.x; x++) {
+                for (int z = 0; z < _chunk.Size.z; z++) {
                     var height = Mathf.FloorToInt(
-                        Mathf.PerlinNoise((position.x + x) * _frequency, (position.z + z) * _frequency) * Chunk.SIZE.y
+                        Mathf.PerlinNoise((position.x + x) * _frequency, (position.z + z) * _frequency) * _chunk.Size.y
                     );
 
                     for (int y = 0; y < height; y++) {
                         _chunk.SetBlock(BlockTypes.RandomSolid(), x, y, z);
                     }
 
-                    for (int y = height; y < Chunk.SIZE.y; y++) {
+                    for (int y = height; y < _chunk.Size.y; y++) {
                         _chunk.SetBlock(BlockTypes.Air(), x, y, z);
                     }
                 }
