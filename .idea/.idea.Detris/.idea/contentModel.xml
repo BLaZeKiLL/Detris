@@ -35,7 +35,7 @@
             <e p="SimpleGrid.cs" t="Include" />
           </e>
           <e p="Input" t="Include">
-            <e p="TouchInputManager.cs" t="Include" />
+            <e p="SwipeInputDetector.cs" t="Include" />
           </e>
           <e p="SceneRootController.cs" t="Include" />
           <e p="Shape" t="Include">

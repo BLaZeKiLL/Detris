@@ -20,13 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Input/SwipeInputDetector.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ShapeRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ShapeRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/TouchInputManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/TouchInputManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/SwipeInputDetector.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +39,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7DAE2265-1EDF-474E-AD4A-B15FA947A891/16/8d3a344a/FileUtil.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7DAE2265-1EDF-474E-AD4A-B15FA947A891/05/1ab699e0/BuildTargetGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/04258D1C-DC10-4424-8C2A-17A6A31A3CF7/14/84050811/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Common/ObjectPools.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -53,13 +54,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GradientBackground.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Input/TouchInputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SceenRootController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SceneRootController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Shapes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Shape.cs" />
@@ -80,6 +79,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ShapeRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Input/TouchInputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Input/SwipeInputDetector.cs" />
       </list>
     </option>
   </component>
@@ -156,7 +158,9 @@
       <workItem from="1601666339525" duration="531000" />
       <workItem from="1601709066323" duration="6543000" />
       <workItem from="1601723128175" duration="1326000" />
-      <workItem from="1601726559521" duration="771000" />
+      <workItem from="1601726559521" duration="848000" />
+      <workItem from="1601748146689" duration="2374000" />
+      <workItem from="1601791734928" duration="7520000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -320,9 +324,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601299762729" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601709149157">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601799176832">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601709149157" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601799176832" />
   </component>
 </project>

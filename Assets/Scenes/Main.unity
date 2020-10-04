@@ -234,7 +234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _material: {fileID: 2100000, guid: 4d6b5ed076445a946bd1a2d0012fbab0, type: 2}
   _shapeConfig:
-    FallSpeed: 9.81
+    SpawnHeight: 10
+    FallSpeed: 1
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationDuration: 1
+  _screenYSplit: 0.3
 --- !u!1 &1346781670
 GameObject:
   m_ObjectHideFlags: 0
