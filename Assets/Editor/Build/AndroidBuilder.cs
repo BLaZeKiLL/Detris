@@ -12,13 +12,17 @@ namespace Editor.Build {
         };
 
         private static readonly string path = "Builds";
-        private static readonly string name = "Detris";
+        private static readonly string name = "detris";
         
         [MenuItem("Build/Android IL2CPP Development Build")]
         public static void DevelopmentBuild() {
+            var pathName = $"{path}/{name}-dev.apk";
+            
+            FileUtil.DeleteFileOrDirectory(pathName);
+            
             var buildPlayOptions = new BuildPlayerOptions {
                 scenes = scenes,
-                locationPathName = $"{path}/{name}.apk",
+                locationPathName = pathName,
                 target = BuildTarget.Android,
                 targetGroup = BuildTargetGroup.Android,
                 options = BuildOptions.Development | BuildOptions.AllowDebugging | BuildOptions.CompressWithLz4HC | BuildOptions.ShowBuiltPlayer
@@ -26,10 +30,25 @@ namespace Editor.Build {
             
             Build(buildPlayOptions);
         }
+        
+        [MenuItem("Build/Android IL2CPP Production Build")]
+        public static void ReleaseBuild() {
+            var pathName = $"{path}/{name}-prod.apk";
+            
+            FileUtil.DeleteFileOrDirectory(pathName);
+            
+            var buildPlayOptions = new BuildPlayerOptions {
+                scenes = scenes,
+                locationPathName = pathName,
+                target = BuildTarget.Android,
+                targetGroup = BuildTargetGroup.Android,
+                options = BuildOptions.CompressWithLz4HC | BuildOptions.ShowBuiltPlayer
+            };
+            
+            Build(buildPlayOptions);
+        }
 
         private static void Build(BuildPlayerOptions buildPlayOptions) {
-            FileUtil.DeleteFileOrDirectory(path);
-            
             var report = BuildPipeline.BuildPlayer(buildPlayOptions);
             var summary = report.summary;
 
