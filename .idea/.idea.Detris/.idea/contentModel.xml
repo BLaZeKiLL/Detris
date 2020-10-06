@@ -64,10 +64,18 @@
           </e>
           <e p="SceneRootController.cs" t="Include" />
           <e p="Shape" t="Include">
-            <e p="Shape.cs" t="Include" />
+            <e p="ShapeBehaviour.cs" t="Include" />
+            <e p="ShapeBuilder.cs" t="Include" />
             <e p="ShapeController.cs" t="Include" />
           </e>
           <e p="Voxel" t="Include">
+            <e p="Block" t="Include">
+              <e p="Block.cs" t="Include" />
+            </e>
+            <e p="Chunk" t="Include">
+              <e p="Chunk.cs" t="Include" />
+            </e>
+            <e p="CodeBlaze.Voxel.asmdef" t="Include" />
             <e p="Mesh" t="Include">
               <e p="MeshBuilder.cs" t="Include" />
               <e p="MeshData.cs" t="Include" />
@@ -76,14 +84,10 @@
               <e p="ChunkRenderer.cs" t="Include" />
               <e p="ShapeRenderer.cs" t="Include" />
             </e>
-            <e p="Shape" t="Include">
-              <e p="Block.cs" t="Include" />
-              <e p="Chunk.cs" t="Include" />
-              <e p="Shapes.cs" t="Include" />
-            </e>
           </e>
         </e>
       </e>
+      <e p="CodeBlaze.Voxel.csproj" t="IncludeRecursive" />
       <e p="Detris.sln" t="IncludeFlat" />
       <e p="IngameDebugConsole.Editor.csproj" t="IncludeRecursive" />
       <e p="IngameDebugConsole.Runtime.csproj" t="IncludeRecursive" />

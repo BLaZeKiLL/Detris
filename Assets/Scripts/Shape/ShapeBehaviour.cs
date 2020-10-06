@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace CodeBlaze.Detris.Shape {
 
-    public class Shape : MonoBehaviour {
+    public class ShapeBehaviour : MonoBehaviour {
 
         private Config _config;
-        
+
         private void Start() {
-            transform.position = new Vector3(0,10,0);
+            transform.position = new Vector3(0, 10, 0);
         }
 
         private void Update() {
@@ -19,7 +19,7 @@ namespace CodeBlaze.Detris.Shape {
         public void UpdateConfig(Config config) {
             _config = config;
         }
-        
+
         [Serializable]
         public class Config {
 

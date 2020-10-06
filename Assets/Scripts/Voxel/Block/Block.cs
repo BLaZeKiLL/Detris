@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CodeBlaze.Detris.Voxel.Shape {
+namespace CodeBlaze.Voxel {
 
     public struct Block {
 

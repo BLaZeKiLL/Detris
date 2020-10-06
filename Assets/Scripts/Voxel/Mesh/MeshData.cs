@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CodeBlaze.Detris.Voxel.Mesh {
+namespace CodeBlaze.Voxel.Mesh {
 
     public class MeshData {
 

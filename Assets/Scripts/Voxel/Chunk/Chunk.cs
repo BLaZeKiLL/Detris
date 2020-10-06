@@ -2,11 +2,9 @@
 
 using UnityEngine;
 
-namespace CodeBlaze.Detris.Voxel.Shape {
+namespace CodeBlaze.Voxel {
 
     public class Chunk {
-
-        public Vector3Int Size { get; }
 
         private Block[] _blocks;
 
@@ -14,6 +12,8 @@ namespace CodeBlaze.Detris.Voxel.Shape {
             Size = size;
             _blocks = new Block[Size.x * Size.y * Size.z];
         }
+
+        public Vector3Int Size { get; }
 
         public void SetBlock(Block block, Vector3Int index) => SetBlock(block, index.x, index.y, index.z);
 

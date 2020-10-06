@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 
-using CodeBlaze.Detris.Voxel.Shape;
-
 using UnityEngine;
 
-namespace CodeBlaze.Detris.Voxel.Mesh {
+namespace CodeBlaze.Voxel.Mesh {
 
     public class MeshBuilder {
 
@@ -200,7 +198,7 @@ namespace CodeBlaze.Detris.Voxel.Mesh {
             }
 
             index += 4;
-            
+
             var normal = new Vector3(
                 mask.normal * directionMask[0],
                 mask.normal * directionMask[1],
@@ -211,7 +209,7 @@ namespace CodeBlaze.Detris.Voxel.Mesh {
             normals.Add(normal);
             normals.Add(normal);
             normals.Add(normal);
-            
+
             colors.Add(mask.color);
             colors.Add(mask.color);
             colors.Add(mask.color);
@@ -229,9 +227,9 @@ namespace CodeBlaze.Detris.Voxel.Mesh {
             }
 
             public static bool operator ==(Mask m1, Mask m2) {
-                return 
-                    m1.normal == m2.normal && 
-                    m1.color.r == m2.color.r && 
+                return
+                    m1.normal == m2.normal &&
+                    m1.color.r == m2.color.r &&
                     m1.color.g == m2.color.g &&
                     m1.color.b == m2.color.b;
             }
