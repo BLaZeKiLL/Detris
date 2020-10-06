@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace CodeBlaze.Detris {
+namespace CodeBlaze.Detris.SkyBox {
 
     [RequireComponent(typeof(RawImage))]
-    public class GradientBackground : MonoBehaviour {
+    public class StaticGradientSkyBox : MonoBehaviour {
 
         [SerializeField] private Color[] _colors;
 

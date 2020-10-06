@@ -30,7 +30,7 @@ namespace CodeBlaze.Detris {
         }
 
         private void ShapeMovement(SwipeInputDetector.SwipeEventArgs e) {
-            Debug.Log($"Movement Direction : {SwipeHelpers.GetOctalDirection(e)}");
+            UnityEngine.Debug.Log($"Movement Direction : {SwipeHelpers.GetOctalDirection(e)}");
         }
 
         private void SceneRotation(SwipeInputDetector.SwipeEventArgs e) {

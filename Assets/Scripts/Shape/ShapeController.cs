@@ -37,10 +37,10 @@ namespace CodeBlaze.Detris.Shape {
 
         private void Start() {
             var bag = new RandomBag<Chunk>(new[] {
-                ShapeBuilder.Z(new Color32(220, 10, 10, 255)),
-                ShapeBuilder.T(new Color32(10, 220, 10, 255)),
-                ShapeBuilder.L(new Color32(10, 10, 220, 255)),
-                ShapeBuilder.I(new Color32(220, 220, 220, 255)),
+                ShapeBuilder.Build(ShapeType.I, new Color32(220, 10, 10, 255)),
+                ShapeBuilder.Build(ShapeType.L, new Color32(10, 220, 10, 255)),
+                ShapeBuilder.Build(ShapeType.T, new Color32(10, 10, 220, 255)),
+                ShapeBuilder.Build(ShapeType.Z, new Color32(220, 220, 220, 255))
             });
 
             _shapePool.Claim().GetComponent<ShapeRenderer>().Render(bag.GetItem());

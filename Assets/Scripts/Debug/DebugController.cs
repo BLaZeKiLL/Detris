@@ -6,7 +6,7 @@ using IngameDebugConsole;
 
 using UnityEngine;
 
-namespace CodeBlaze.Detris {
+namespace CodeBlaze.Detris.Debug {
 
     public class DebugController : MonoBehaviour {
 

@@ -54,8 +54,9 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="DebugController.cs" t="Include" />
-          <e p="GradientBackground.cs" t="Include" />
+          <e p="Debug" t="Include">
+            <e p="DebugController.cs" t="Include" />
+          </e>
           <e p="Grid" t="Include">
             <e p="SimpleGrid.cs" t="Include" />
           </e>
@@ -67,6 +68,10 @@
             <e p="ShapeBehaviour.cs" t="Include" />
             <e p="ShapeBuilder.cs" t="Include" />
             <e p="ShapeController.cs" t="Include" />
+            <e p="ShapeType.cs" t="Include" />
+          </e>
+          <e p="SkyBox" t="Include">
+            <e p="StaticGradientSkyBox.cs" t="Include" />
           </e>
           <e p="Voxel" t="Include">
             <e p="Block" t="Include">
