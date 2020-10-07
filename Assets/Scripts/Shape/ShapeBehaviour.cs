@@ -1,12 +1,17 @@
 ﻿using System;
 
+using CodeBlaze.Voxel.Renderer;
+
 using UnityEngine;
 
-namespace CodeBlaze.Detris.Shape {
+namespace CodeBlaze.Detris.Shapes {
 
     public class ShapeBehaviour : MonoBehaviour {
 
+        private ChunkRenderer _chunkRenderer;
+
         private Config _config;
+        private Shape _shape;
 
         private void Start() {
             transform.position = new Vector3(0, 10, 0);
@@ -16,8 +21,14 @@ namespace CodeBlaze.Detris.Shape {
             transform.position += Vector3.down * (_config.FallSpeed * Time.deltaTime);
         }
 
-        public void UpdateConfig(Config config) {
+        public void Initialize(Config config, ChunkRenderer chunkRenderer) {
             _config = config;
+            _chunkRenderer = chunkRenderer;
+        }
+
+        public void UpdateShape(Shape shape) {
+            _shape = shape;
+            _chunkRenderer.Render(_shape.Chunk);
         }
 
         [Serializable]

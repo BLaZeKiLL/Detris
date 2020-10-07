@@ -4,7 +4,7 @@ using CodeBlaze.Voxel;
 
 using UnityEngine;
 
-namespace CodeBlaze.Detris.Shape {
+namespace CodeBlaze.Detris.Shapes {
 
     public static class ShapeBuilder {
 
@@ -22,7 +22,7 @@ namespace CodeBlaze.Detris.Shape {
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
         }
-        
+
         private static Chunk I(Color32 color) {
             var shape = new Chunk(new Vector3Int(3, 1, 1));
 

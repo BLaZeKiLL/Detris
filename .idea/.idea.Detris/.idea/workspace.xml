@@ -20,20 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Debug.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SkyBox.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DebugController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Debug/DebugController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DebugController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Debug/DebugController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GradientBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkyBox/StaticGradientSkyBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GradientBackground.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkyBox/StaticGradientSkyBox.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ShapeRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ShapeRenderer.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +78,6 @@
         <option value="$PROJECT_DIR$/.github/workflows/build-development.yml" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Shape/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Shape/Shapes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/TouchInputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/SwipeInputDetector.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.yasirkula.ingamedebugconsole@1.3.5/Plugins/IngameDebugConsole/Scripts/DebugLogPopup.cs" />
@@ -93,15 +90,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ShapeRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Debug/DebugController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StaticGradientSkyBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SkyBox/StaticGradientSkyBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBuilder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -181,7 +179,8 @@
       <workItem from="1601726559521" duration="848000" />
       <workItem from="1601748146689" duration="2374000" />
       <workItem from="1601791734928" duration="14864000" />
-      <workItem from="1602003965128" duration="3517000" />
+      <workItem from="1602003965128" duration="3717000" />
+      <workItem from="1602081980742" duration="3077000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -337,10 +336,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="551" y="159" key="#Plugins/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601376142881" />
-    <state x="669" y="123" key="RiderGenerateDialog" timestamp="1601103540263">
+    <state x="669" y="123" key="RiderGenerateDialog" timestamp="1602082714022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="669" y="123" key="RiderGenerateDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1601103540263" />
+    <state x="669" y="123" key="RiderGenerateDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1602082714022" />
     <state x="460" y="163" key="SettingsEditor" timestamp="1601288170935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

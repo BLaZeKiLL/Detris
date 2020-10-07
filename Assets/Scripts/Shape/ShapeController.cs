@@ -1,11 +1,10 @@
 ﻿using CodeBlaze.Library.Collections.Pools;
 using CodeBlaze.Library.Collections.Random;
-using CodeBlaze.Voxel;
 using CodeBlaze.Voxel.Renderer;
 
 using UnityEngine;
 
-namespace CodeBlaze.Detris.Shape {
+namespace CodeBlaze.Detris.Shapes {
 
     public class ShapeController : MonoBehaviour {
 
@@ -13,37 +12,40 @@ namespace CodeBlaze.Detris.Shape {
 
         [SerializeField] private ShapeBehaviour.Config _shapeConfig;
 
-        private LazyObjectPool<GameObject> _shapePool;
+        private LazyObjectPool<ShapeBehaviour> _shapePool;
 
         private void Awake() {
-            _shapePool = new LazyObjectPool<GameObject>(
+            _shapePool = new LazyObjectPool<ShapeBehaviour>(
                 5,
                 index => {
-                    var go = new GameObject("Shape", typeof(ShapeRenderer), typeof(ShapeBehaviour));
+                    var shape = new GameObject("Shape", typeof(ChunkRenderer), typeof(ShapeBehaviour));
 
-                    go.SetActive(false);
-                    go.transform.parent = transform;
-                    go.transform.position = Vector3.up * _shapeConfig.SpawnHeight;
+                    shape.SetActive(false);
+                    shape.transform.parent = transform;
+                    shape.transform.position = Vector3.up * _shapeConfig.SpawnHeight;
 
-                    go.GetComponent<MeshRenderer>().material = _material;
-                    go.GetComponent<ShapeBehaviour>().UpdateConfig(_shapeConfig);
+                    shape.GetComponent<MeshRenderer>().material = _material;
+                    shape.GetComponent<ShapeBehaviour>().Initialize(
+                        _shapeConfig,
+                        shape.GetComponent<ChunkRenderer>()
+                    );
 
-                    return go;
+                    return shape.GetComponent<ShapeBehaviour>();
                 },
-                go => go.SetActive(true),
-                go => go.SetActive(false)
+                sb => sb.gameObject.SetActive(true),
+                sb => sb.gameObject.SetActive(false)
             );
         }
 
         private void Start() {
-            var bag = new RandomBag<Chunk>(new[] {
-                ShapeBuilder.Build(ShapeType.I, new Color32(220, 10, 10, 255)),
-                ShapeBuilder.Build(ShapeType.L, new Color32(10, 220, 10, 255)),
-                ShapeBuilder.Build(ShapeType.T, new Color32(10, 10, 220, 255)),
-                ShapeBuilder.Build(ShapeType.Z, new Color32(220, 220, 220, 255))
+            var bag = new RandomBag<Shape>(new[] {
+                new Shape(ShapeType.I, new Color32(220, 10, 10, 255)),
+                new Shape(ShapeType.L, new Color32(10, 220, 10, 255)),
+                new Shape(ShapeType.T, new Color32(10, 10, 220, 255)),
+                new Shape(ShapeType.Z, new Color32(220, 220, 220, 255))
             });
 
-            _shapePool.Claim().GetComponent<ShapeRenderer>().Render(bag.GetItem());
+            _shapePool.Claim().UpdateShape(bag.GetItem());
         }
 
     }

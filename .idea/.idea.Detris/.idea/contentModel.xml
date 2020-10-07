@@ -65,6 +65,7 @@
           </e>
           <e p="SceneRootController.cs" t="Include" />
           <e p="Shape" t="Include">
+            <e p="Shape.cs" t="Include" />
             <e p="ShapeBehaviour.cs" t="Include" />
             <e p="ShapeBuilder.cs" t="Include" />
             <e p="ShapeController.cs" t="Include" />
@@ -87,7 +88,6 @@
             </e>
             <e p="Renderer" t="Include">
               <e p="ChunkRenderer.cs" t="Include" />
-              <e p="ShapeRenderer.cs" t="Include" />
             </e>
           </e>
         </e>

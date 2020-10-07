@@ -1,4 +1,4 @@
-﻿namespace CodeBlaze.Detris.Shape {
+﻿namespace CodeBlaze.Detris.Shapes {
 
     public enum ShapeType : byte {
 
