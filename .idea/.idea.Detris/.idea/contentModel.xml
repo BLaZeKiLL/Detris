@@ -63,12 +63,14 @@
           <e p="Input" t="Include">
             <e p="SwipeInputDetector.cs" t="Include" />
           </e>
-          <e p="SceneRootController.cs" t="Include" />
           <e p="Shape" t="Include">
             <e p="Shape.cs" t="Include" />
             <e p="ShapeBehaviour.cs" t="Include" />
             <e p="ShapeBuilder.cs" t="Include" />
-            <e p="ShapeController.cs" t="Include" />
+            <e p="ShapeInputController.cs" t="Include" />
+            <e p="ShapeMovementController.cs" t="Include" />
+            <e p="ShapeRotationController.cs" t="Include" />
+            <e p="ShapeSpawner.cs" t="Include" />
             <e p="ShapeType.cs" t="Include" />
           </e>
           <e p="SkyBox" t="Include">
