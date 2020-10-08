@@ -20,18 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ShapeRenderer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ShapeRenderer.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,9 +88,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" />
       </list>
     </option>
   </component>
@@ -180,7 +171,8 @@
       <workItem from="1601748146689" duration="2374000" />
       <workItem from="1601791734928" duration="14864000" />
       <workItem from="1602003965128" duration="3717000" />
-      <workItem from="1602081980742" duration="3077000" />
+      <workItem from="1602081980742" duration="4555000" />
+      <workItem from="1602144762995" duration="1867000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -287,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602006928583</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="shapes refactoring">
+      <created>1602087720830</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1602087720830</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +325,8 @@
     <MESSAGE value="Chunk Size Configurable" />
     <MESSAGE value="Voxel Refactoring" />
     <MESSAGE value="Major re-structuring, voxel asmdef created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Major re-structuring, voxel asmdef created" />
+    <MESSAGE value="shapes refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="shapes refactoring" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -348,10 +348,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1602006074953" />
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1602006939425">
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2" timestamp="1602087722961">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1602006939425" />
+    <state x="551" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1602087722961" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601799176832">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,14 +1,11 @@
 ﻿using CodeBlaze.Library.Collections.Pools;
 using CodeBlaze.Library.Collections.Random;
-using CodeBlaze.Voxel.Renderer;
 
 using UnityEngine;
 
 namespace CodeBlaze.Detris.Shapes {
 
     public class ShapeController : MonoBehaviour {
-
-        [SerializeField] private Material _material;
 
         [SerializeField] private ShapeBehaviour.Config _shapeConfig;
 
@@ -17,21 +14,7 @@ namespace CodeBlaze.Detris.Shapes {
         private void Awake() {
             _shapePool = new LazyObjectPool<ShapeBehaviour>(
                 5,
-                index => {
-                    var shape = new GameObject("Shape", typeof(ChunkRenderer), typeof(ShapeBehaviour));
-
-                    shape.SetActive(false);
-                    shape.transform.parent = transform;
-                    shape.transform.position = Vector3.up * _shapeConfig.SpawnHeight;
-
-                    shape.GetComponent<MeshRenderer>().material = _material;
-                    shape.GetComponent<ShapeBehaviour>().Initialize(
-                        _shapeConfig,
-                        shape.GetComponent<ChunkRenderer>()
-                    );
-
-                    return shape.GetComponent<ShapeBehaviour>();
-                },
+                index => ShapeBehaviour.Instantiate(transform, _shapeConfig),
                 sb => sb.gameObject.SetActive(true),
                 sb => sb.gameObject.SetActive(false)
             );
