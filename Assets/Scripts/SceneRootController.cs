@@ -10,10 +10,15 @@ namespace CodeBlaze.Detris {
 
     public class SceneRootController : MonoBehaviour {
 
+        [SerializeField] [Range(3, 5)] private int _gridSize = 3;
         [SerializeField] [Range(0.5f, 5f)] private float _rotationDuration = 1f;
         [SerializeField] [Range(0.2f, 0.5f)] private float _screenYSplit = 0.3f;
-        
+
         private Vector3 _rotation;
+
+        private void Awake() {
+            transform.position = new Vector3((float) _gridSize / 2, 0, (float) _gridSize / 2);
+        }
 
         private void Start() {
             _rotation = Vector3.zero;

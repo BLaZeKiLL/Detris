@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,15 +83,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ShapeRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Debug/DebugController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StaticGradientSkyBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SkyBox/StaticGradientSkyBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" />
       </list>
     </option>
   </component>
@@ -172,7 +173,8 @@
       <workItem from="1601791734928" duration="14864000" />
       <workItem from="1602003965128" duration="3717000" />
       <workItem from="1602081980742" duration="4555000" />
-      <workItem from="1602144762995" duration="1867000" />
+      <workItem from="1602144762995" duration="2514000" />
+      <workItem from="1602161405943" duration="777000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -286,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602087720830</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Shape Behaviour Instantiate refactor">
+      <created>1602147660115</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1602147660115</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +335,8 @@
     <MESSAGE value="Voxel Refactoring" />
     <MESSAGE value="Major re-structuring, voxel asmdef created" />
     <MESSAGE value="shapes refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="shapes refactoring" />
+    <MESSAGE value="Shape Behaviour Instantiate refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shape Behaviour Instantiate refactor" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

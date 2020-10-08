@@ -28,7 +28,9 @@ namespace CodeBlaze.Detris.Shapes {
             shape.transform.parent = parent;
             shape.transform.position = Vector3.up * config.SpawnHeight;
 
+            // TODO can be moved to better place
             shape.GetComponent<MeshRenderer>().material = config.Material;
+
             shape.GetComponent<ShapeBehaviour>().Initialize(
                 config,
                 shape.GetComponent<ChunkRenderer>()
