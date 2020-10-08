@@ -68,9 +68,10 @@ namespace CodeBlaze.Voxel.Mesh {
                                 0 <= chunkItr[direction]
                                     ? currentBlock.IsSolid()
                                     : false; // check neighbour in -ve axis
-                            bool blockCompare = chunkItr[direction] < mainAxisLimit - 1
-                                ? compareBlock.IsSolid()
-                                : false; // check neighbour in +ve axis
+                            bool blockCompare =
+                                chunkItr[direction] < mainAxisLimit - 1
+                                    ? compareBlock.IsSolid()
+                                    : false; // check neighbour in +ve axis
 
                             if (blockCurrent == blockCompare) {
                                 mask[n++] = new Mask(0, Color.magenta);

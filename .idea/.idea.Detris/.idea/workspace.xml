@@ -20,17 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,21 +78,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ShapeRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Debug/DebugController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StaticGradientSkyBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SkyBox/StaticGradientSkyBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -184,7 +176,7 @@
       <workItem from="1602081980742" duration="4555000" />
       <workItem from="1602144762995" duration="2514000" />
       <workItem from="1602161405943" duration="914000" />
-      <workItem from="1602177929474" duration="2107000" />
+      <workItem from="1602177929474" duration="2718000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>
@@ -312,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602162312558</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Shape Movement and Rotation Refactoring">
+      <created>1602180082085</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1602180082085</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +353,8 @@
     <MESSAGE value="shapes refactoring" />
     <MESSAGE value="Shape Behaviour Instantiate refactor" />
     <MESSAGE value="Scene Root Position fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Scene Root Position fixed" />
+    <MESSAGE value="Shape Movement and Rotation Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shape Movement and Rotation Refactoring" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

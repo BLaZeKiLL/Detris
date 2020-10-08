@@ -13,6 +13,10 @@ namespace CodeBlaze.Detris.Shapes {
         private Config _config;
         private Shape _shape;
 
+        private void Awake() {
+            _chunkRenderer = GetComponent<ChunkRenderer>();
+        }
+
         private void Start() {
             transform.position = new Vector3(0, 10, 0);
         }
@@ -28,20 +32,16 @@ namespace CodeBlaze.Detris.Shapes {
             shape.transform.parent = parent;
             shape.transform.position = Vector3.up * config.SpawnHeight;
 
-            // TODO can be moved to better place
-            shape.GetComponent<MeshRenderer>().material = config.Material;
+            var shapeBehaviour = shape.GetComponent<ShapeBehaviour>();
 
-            shape.GetComponent<ShapeBehaviour>().Initialize(
-                config,
-                shape.GetComponent<ChunkRenderer>()
-            );
+            shapeBehaviour.Initialize(config);
 
-            return shape.GetComponent<ShapeBehaviour>();
+            return shapeBehaviour;
         }
 
-        public void Initialize(Config config, ChunkRenderer chunkRenderer) {
+        private void Initialize(Config config) {
             _config = config;
-            _chunkRenderer = chunkRenderer;
+            _chunkRenderer.SetMaterial(config.Material);
         }
 
         public void UpdateShape(Shape shape) {
