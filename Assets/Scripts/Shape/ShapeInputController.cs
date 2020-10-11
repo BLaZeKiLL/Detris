@@ -1,4 +1,6 @@
-﻿using CodeBlaze.Detris.Input;
+﻿using System;
+
+using CodeBlaze.Detris.Input;
 
 using UnityEngine;
 
@@ -13,7 +15,7 @@ namespace CodeBlaze.Detris.Shapes {
         private ShapeMovementController _shapeMovementController;
         private ShapeRotationController _shapeRotationController;
 
-        private int _gridSize;
+        private Vector2 _origin;
         
         private void Awake() {
             _shapeRotationController = GetComponent<ShapeRotationController>();
@@ -27,6 +29,22 @@ namespace CodeBlaze.Detris.Shapes {
         private void OnDestroy() {
             SwipeInputDetector.Swipe -= OnSwipe;
         }
+        
+        private void OnDrawGizmos() {
+            if (CurrentShape == null) return;
+            
+            UnityEngine.Debug.DrawLine(
+                new Vector3(_origin.x, 0 ,_origin.y), 
+                new Vector3(CurrentShape.Position.x, 0f, CurrentShape.Position.y),
+                Color.red
+            );
+            
+            UnityEngine.Debug.DrawLine(
+                new Vector3(_origin.x, 0 ,_origin.y), 
+                new Vector3(CurrentShape.CrossPosition.x, 0f, CurrentShape.CrossPosition.y),
+                Color.cyan
+            );
+        }
 
         public void UpdateCurrentShape(Shape currentShape) {
             CurrentShape = currentShape;
@@ -34,7 +52,7 @@ namespace CodeBlaze.Detris.Shapes {
             UnityEngine.Debug.Log($"Position : {CurrentShape.Position} : Cross Position : {CurrentShape.CrossPosition}");
         }
 
-        public void setGridSize(int gridSize) => _gridSize = gridSize;
+        public void setGridSize(int gridSize) => _origin = new Vector2((float) gridSize/ 2, (float) gridSize/ 2);
 
         private void OnSwipe(object sender, SwipeInputDetector.SwipeEventArgs e) {
             if (SwipeHelpers.MeanY(e) / Screen.height > _screenYSplit) {
@@ -43,9 +61,31 @@ namespace CodeBlaze.Detris.Shapes {
                 _shapeMovementController.Movement(swipeDirection);
             } else {
                 var swipeDirection = SwipeHelpers.GetHorizontalDirection(e);
-                
+                CheckRotation(swipeDirection);
                 _shapeRotationController.Rotation(swipeDirection);
             }
+        }
+
+        private bool CheckRotation(SwipeDirection direction) {
+            var positionVec = CurrentShape.Position - _origin;
+            var crossPositionVec = CurrentShape.CrossPosition - _origin;
+            
+            switch (direction) {
+                case SwipeDirection.EAST:
+                    CurrentShape.Position = Quaternion.Euler(0f, 0f, 90) * positionVec;
+                    CurrentShape.CrossPosition = Quaternion.Euler(0f, 0f, 90) * crossPositionVec;
+
+                    UnityEngine.Debug.Log($"Position : {CurrentShape.Position} Cross Position : {CurrentShape.CrossPosition}");
+                    return false;
+                case SwipeDirection.WEST:
+                    CurrentShape.Position = Quaternion.Euler(0f, 0f, -90) * positionVec;
+                    CurrentShape.CrossPosition = Quaternion.Euler(0f, 0f, -90) * crossPositionVec;
+                    
+                    UnityEngine.Debug.Log($"Position : {CurrentShape.Position} Cross Position : {CurrentShape.CrossPosition}");
+                    return false;
+            }
+            
+            throw new InvalidProgramException($"This should not happen, Direction : {direction}");
         }
 
     }
