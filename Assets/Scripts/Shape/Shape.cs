@@ -8,10 +8,14 @@ namespace CodeBlaze.Detris.Shapes {
 
         public Shape(ShapeType type, Color32 color) {
             Type = type;
-            Chunk = ShapeBuilder.Build(type, color);
+            Chunk = ShapeChunkBuilder.Build(type, color);
         }
 
         public ShapeType Type { get; }
+        
+        public Vector2 Position { get; set; }
+        public Vector2 CrossPosition { get; set; }
+        
         public Chunk Chunk { get; }
 
     }

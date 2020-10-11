@@ -7,12 +7,14 @@ namespace CodeBlaze.Detris.Shapes {
     public class ShapeInputController : MonoBehaviour {
 
         [SerializeField] [Range(0.2f, 0.5f)] private float _screenYSplit = 0.3f;
+        
+        public Shape CurrentShape { get; private set; }
+        
         private ShapeMovementController _shapeMovementController;
-
         private ShapeRotationController _shapeRotationController;
 
-        public Shape CurrentShape { get; private set; }
-
+        private int _gridSize;
+        
         private void Awake() {
             _shapeRotationController = GetComponent<ShapeRotationController>();
             _shapeMovementController = GetComponent<ShapeMovementController>();
@@ -28,15 +30,22 @@ namespace CodeBlaze.Detris.Shapes {
 
         public void UpdateCurrentShape(Shape currentShape) {
             CurrentShape = currentShape;
-            _shapeMovementController.UpdateCurrentShape(CurrentShape);
-            _shapeRotationController.UpdateCurrentShape(CurrentShape);
+            
+            UnityEngine.Debug.Log($"Position : {CurrentShape.Position} : Cross Position : {CurrentShape.CrossPosition}");
         }
 
+        public void setGridSize(int gridSize) => _gridSize = gridSize;
+
         private void OnSwipe(object sender, SwipeInputDetector.SwipeEventArgs e) {
-            if (SwipeHelpers.MeanY(e) / Screen.height > _screenYSplit)
-                _shapeMovementController.Movement(e);
-            else
-                _shapeRotationController.Rotation(e);
+            if (SwipeHelpers.MeanY(e) / Screen.height > _screenYSplit) {
+                var swipeDirection = SwipeHelpers.GetOctalDirection(e);
+                
+                _shapeMovementController.Movement(swipeDirection);
+            } else {
+                var swipeDirection = SwipeHelpers.GetHorizontalDirection(e);
+                
+                _shapeRotationController.Rotation(swipeDirection);
+            }
         }
 
     }

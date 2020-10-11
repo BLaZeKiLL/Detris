@@ -14,18 +14,12 @@ namespace CodeBlaze.Detris.Shapes {
 
         private Vector3 _rotation;
 
-        public Shape CurrentShape { get; private set; }
-
         private void Start() {
             _rotation = Vector3.zero;
         }
 
-        public void UpdateCurrentShape(Shape currentShape) {
-            CurrentShape = currentShape;
-        }
-
-        public void Rotation(SwipeInputDetector.SwipeEventArgs e) {
-            switch (SwipeHelpers.GetHorizontalDirection(e)) {
+        public void Rotation(SwipeDirection swipeDirection) {
+            switch (swipeDirection) {
                 case SwipeDirection.WEST:
                     _rotation += Vector3.up * 90;
                     if (Math.Abs(_rotation.y - 360) < float.Epsilon) _rotation = Vector3.zero;

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CodeBlaze.Detris.Shapes {
 
-    public static class ShapeBuilder {
+    public static class ShapeChunkBuilder {
 
         public static Chunk Build(ShapeType type, Color32 color) {
             switch (type) {

@@ -18,6 +18,8 @@ namespace CodeBlaze.Detris.Shapes {
             transform.position = new Vector3((float) _gridSize / 2, 0, (float) _gridSize / 2);
 
             _shapeInputController = GetComponent<ShapeInputController>();
+            
+            _shapeInputController.setGridSize(_gridSize);
 
             _shapeBehaviourPool = new LazyObjectPool<ShapeBehaviour>(
                 5,
@@ -35,10 +37,13 @@ namespace CodeBlaze.Detris.Shapes {
                 new Shape(ShapeType.Z, new Color32(220, 220, 220, 255))
             });
 
-            SpawnShape(bag.GetItem());
+            SpawnShape(bag.GetItem(), Vector2.zero);
         }
 
-        private void SpawnShape(Shape shape) {
+        private void SpawnShape(Shape shape, Vector2 position) {
+            shape.Position = position;
+            shape.CrossPosition = position + new Vector2(shape.Chunk.Size.x, shape.Chunk.Size.z);
+            
             _shapeBehaviourPool.Claim().UpdateShape(shape);
             _shapeInputController.UpdateCurrentShape(shape);
         }

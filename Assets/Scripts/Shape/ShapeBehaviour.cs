@@ -17,10 +17,6 @@ namespace CodeBlaze.Detris.Shapes {
             _chunkRenderer = GetComponent<ChunkRenderer>();
         }
 
-        private void Start() {
-            transform.position = new Vector3(0, 10, 0);
-        }
-
         private void Update() {
             transform.position += Vector3.down * (_config.FallSpeed * Time.deltaTime);
         }
@@ -30,7 +26,6 @@ namespace CodeBlaze.Detris.Shapes {
 
             shape.SetActive(false);
             shape.transform.parent = parent;
-            shape.transform.position = Vector3.up * config.SpawnHeight;
 
             var shapeBehaviour = shape.GetComponent<ShapeBehaviour>();
 
@@ -46,6 +41,9 @@ namespace CodeBlaze.Detris.Shapes {
 
         public void UpdateShape(Shape shape) {
             _shape = shape;
+            
+            transform.position = new Vector3(_shape.Position.x, _config.SpawnHeight, _shape.Position.y);
+            
             _chunkRenderer.Render(_shape.Chunk);
         }
 
