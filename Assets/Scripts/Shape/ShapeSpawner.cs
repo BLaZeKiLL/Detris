@@ -31,10 +31,10 @@ namespace CodeBlaze.Detris.Shapes {
 
         private void Start() {
             var bag = new RandomBag<Shape>(new[] {
-                new Shape(ShapeType.I, new Color32(220, 10, 10, 255)),
-                new Shape(ShapeType.L, new Color32(10, 220, 10, 255)),
-                new Shape(ShapeType.T, new Color32(10, 10, 220, 255)),
-                new Shape(ShapeType.Z, new Color32(220, 220, 220, 255))
+                new Shape(ShapeType.I, new Color32(220, 10, 10, 255), Vector3.up),
+                new Shape(ShapeType.L, new Color32(10, 220, 10, 255), Vector3.up),
+                new Shape(ShapeType.T, new Color32(10, 10, 220, 255), Vector3.up),
+                new Shape(ShapeType.Z, new Color32(220, 220, 220, 255), Vector3.up)
             });
 
             SpawnShape(bag.GetItem(), Vector2.zero);
