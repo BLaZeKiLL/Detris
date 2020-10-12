@@ -11,8 +11,10 @@ namespace CodeBlaze.Detris.Shapes {
 
     public class ShapeMovementController : MonoBehaviour {
         
-        public void Movement(Shape shape, SwipeDirection swipeDirection) {
-            var pivot = shape.Behaviour.transform.parent;
+        private Shape _currentShape;
+        
+        public void Movement(SwipeDirection swipeDirection) {
+            var pivot = _currentShape.Behaviour.transform;
 
             Vector3 mov;
             
@@ -45,10 +47,19 @@ namespace CodeBlaze.Detris.Shapes {
                     throw new ArgumentOutOfRangeException(nameof(swipeDirection), swipeDirection, null);
             }
             
-            var newPosition = shape.Position + mov;
-            var newCrossPosition = shape.CrossPosition + mov;
+            var newPosition = _currentShape.Position + mov;
+            var newCrossPosition = _currentShape.CrossPosition + mov;
+            
+            if (!ShapeExtensions.BoundCheck(newPosition, newCrossPosition)) return;
+
+            _currentShape.Position = newPosition;
+            _currentShape.CrossPosition = newCrossPosition;
 
             pivot.DOMove(pivot.position + mov, SettingsProvider.Current.Settings.TweenDuration);
+        }
+        
+        public void UpdateShape(Shape shape) {
+            _currentShape = shape;
         }
 
     }

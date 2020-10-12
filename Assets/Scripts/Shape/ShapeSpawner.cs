@@ -18,8 +18,6 @@ namespace CodeBlaze.Detris.Shapes {
 
             _shapeInputController = GetComponent<ShapeInputController>();
             
-            _shapeInputController.setGridSize(gridSize);
-
             _shapeBehaviourPool = new LazyObjectPool<ShapeBehaviour>(
                 5,
                 index => ShapeBehaviour.Instantiate(transform, pivot, SettingsProvider.Current.Settings.ShapeConfig),
