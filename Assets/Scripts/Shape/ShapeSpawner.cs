@@ -1,4 +1,5 @@
-﻿using CodeBlaze.Library.Collections.Pools;
+﻿using CodeBlaze.Detris.Settings;
+using CodeBlaze.Library.Collections.Pools;
 using CodeBlaze.Library.Collections.Random;
 
 using UnityEngine;
@@ -6,24 +7,22 @@ using UnityEngine;
 namespace CodeBlaze.Detris.Shapes {
 
     public class ShapeSpawner : MonoBehaviour {
-
-        [SerializeField] [Range(3, 5)] private int _gridSize = 3;
-        [SerializeField] private ShapeBehaviour.Config _shapeConfig;
-
+        
         private LazyObjectPool<ShapeBehaviour> _shapeBehaviourPool;
 
         private ShapeInputController _shapeInputController;
 
         private void Awake() {
-            var pivot = new Vector3((float) _gridSize / 2, 0, (float) _gridSize / 2);
+            var gridSize = SettingsProvider.Current.Settings.GridSize;
+            var pivot = new Vector3((float) gridSize / 2, 0, (float) gridSize / 2);
 
             _shapeInputController = GetComponent<ShapeInputController>();
             
-            _shapeInputController.setGridSize(_gridSize);
+            _shapeInputController.setGridSize(gridSize);
 
             _shapeBehaviourPool = new LazyObjectPool<ShapeBehaviour>(
                 5,
-                index => ShapeBehaviour.Instantiate(transform, pivot, _shapeConfig),
+                index => ShapeBehaviour.Instantiate(transform, pivot, SettingsProvider.Current.Settings.ShapeConfig),
                 sb => sb.transform.parent.gameObject.SetActive(true),
                 sb => sb.transform.parent.gameObject.SetActive(false)
             );

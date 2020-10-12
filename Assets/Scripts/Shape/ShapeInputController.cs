@@ -1,15 +1,13 @@
 ﻿using System;
 
 using CodeBlaze.Detris.Input;
+using CodeBlaze.Detris.Settings;
 
 using UnityEngine;
 
 namespace CodeBlaze.Detris.Shapes {
 
     public class ShapeInputController : MonoBehaviour {
-
-        [SerializeField] [Range(0.2f, 0.5f)] private float _screenYSplit = 0.3f;
-        
         public Shape CurrentShape { get; private set; }
         
         private ShapeMovementController _shapeMovementController;
@@ -57,7 +55,7 @@ namespace CodeBlaze.Detris.Shapes {
         }
 
         private void OnSwipe(object sender, SwipeInputDetector.SwipeEventArgs e) {
-            if (SwipeHelpers.MeanY(e) / Screen.height > _screenYSplit) {
+            if (SwipeHelpers.MeanY(e) / Screen.height > SettingsProvider.Current.Settings.ScreenSplit) {
                 var swipeDirection = SwipeHelpers.GetOctalDirection(e);
                 
                 _shapeMovementController.Movement(CurrentShape, swipeDirection);

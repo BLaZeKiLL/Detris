@@ -63,6 +63,10 @@
           <e p="Input" t="Include">
             <e p="SwipeInputDetector.cs" t="Include" />
           </e>
+          <e p="Settings" t="Include">
+            <e p="GameSettings.cs" t="Include" />
+            <e p="SettingsProvider.cs" t="Include" />
+          </e>
           <e p="Shape" t="Include">
             <e p="Shape.cs" t="Include" />
             <e p="ShapeBehaviour.cs" t="Include" />
@@ -75,6 +79,9 @@
           </e>
           <e p="SkyBox" t="Include">
             <e p="StaticGradientSkyBox.cs" t="Include" />
+          </e>
+          <e p="Util" t="Include">
+            <e p="Singleton.cs" t="Include" />
           </e>
           <e p="Voxel" t="Include">
             <e p="Block" t="Include">

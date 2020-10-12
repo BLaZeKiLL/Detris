@@ -20,9 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Settings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Settings/GameSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Settings/GameSettings.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Settings/SettingsProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Settings/SettingsProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Util.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Util/Singleton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Util/Singleton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Settings/GameSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Settings/GameSettings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +52,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/GradientTexture.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/ChunkMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GradientBackground.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SceenRootController.cs" />
@@ -85,10 +96,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeGridBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Settings/GameSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Settings/SettingsProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Util/Singleton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" />
       </list>
     </option>
   </component>
@@ -175,7 +189,8 @@
       <workItem from="1602177929474" duration="2824000" />
       <workItem from="1602222900730" duration="8510000" />
       <workItem from="1602268522832" duration="2902000" />
-      <workItem from="1602482242045" duration="7797000" />
+      <workItem from="1602482242045" duration="10955000" />
+      <workItem from="1602496932074" duration="2655000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>

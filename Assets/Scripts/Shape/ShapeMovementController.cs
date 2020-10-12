@@ -1,6 +1,7 @@
 ﻿using System;
 
 using CodeBlaze.Detris.Input;
+using CodeBlaze.Detris.Settings;
 
 using DG.Tweening;
 
@@ -9,8 +10,6 @@ using UnityEngine;
 namespace CodeBlaze.Detris.Shapes {
 
     public class ShapeMovementController : MonoBehaviour {
-
-        [SerializeField] [Range(0.5f, 5f)] private float _movementDuration = 1f;
         
         public void Movement(Shape shape, SwipeDirection swipeDirection) {
             var pivot = shape.Behaviour.transform.parent;
@@ -49,7 +48,7 @@ namespace CodeBlaze.Detris.Shapes {
             var newPosition = shape.Position + mov;
             var newCrossPosition = shape.CrossPosition + mov;
 
-            pivot.DOMove(pivot.position + mov, _movementDuration);
+            pivot.DOMove(pivot.position + mov, SettingsProvider.Current.Settings.TweenDuration);
         }
 
     }

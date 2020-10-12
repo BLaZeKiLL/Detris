@@ -1,6 +1,7 @@
 ﻿using System;
 
 using CodeBlaze.Detris.Input;
+using CodeBlaze.Detris.Settings;
 
 using DG.Tweening;
 
@@ -9,9 +10,6 @@ using UnityEngine;
 namespace CodeBlaze.Detris.Shapes {
 
     public class ShapeRotationController : MonoBehaviour {
-
-        [SerializeField] [Range(0.5f, 5f)] private float _rotationDuration = 1f;
-
         private Vector3 _rotation;
 
         private void Start() {
@@ -25,13 +23,13 @@ namespace CodeBlaze.Detris.Shapes {
                 case SwipeDirection.WEST:
                     _rotation += Vector3.up * 90;
                     if (Math.Abs(_rotation.y - 360) < float.Epsilon) _rotation = Vector3.zero;
-                    pivot.DORotate(_rotation, _rotationDuration);
+                    pivot.DORotate(_rotation, SettingsProvider.Current.Settings.TweenDuration);
 
                     break;
                 case SwipeDirection.EAST:
                     _rotation += Vector3.up * -90;
                     if (Math.Abs(_rotation.y + 360) < float.Epsilon) _rotation = Vector3.zero;
-                    pivot.DORotate(_rotation, _rotationDuration);
+                    pivot.DORotate(_rotation, SettingsProvider.Current.Settings.TweenDuration);
 
                     break;
             }
