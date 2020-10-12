@@ -20,15 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeChunkBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBuilder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeChunkBuilder.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,27 +81,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" />
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeChunkBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeGridBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" />
-=======
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" />
->>>>>>> 498e05f0c6d3881f1c884d46df4a5d90a0cb69ba
       </list>
     </option>
   </component>
@@ -190,14 +174,10 @@
       <workItem from="1602081980742" duration="4555000" />
       <workItem from="1602144762995" duration="2514000" />
       <workItem from="1602161405943" duration="914000" />
-<<<<<<< HEAD
       <workItem from="1602177929474" duration="2824000" />
       <workItem from="1602222900730" duration="8510000" />
       <workItem from="1602268522832" duration="2902000" />
-=======
-      <workItem from="1602177929474" duration="2718000" />
-      <workItem from="1602415964243" duration="1893000" />
->>>>>>> 498e05f0c6d3881f1c884d46df4a5d90a0cb69ba
+      <workItem from="1602482242045" duration="3770000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>

@@ -15,7 +15,8 @@ namespace CodeBlaze.Detris.Shapes {
         private ShapeMovementController _shapeMovementController;
         private ShapeRotationController _shapeRotationController;
 
-        private Vector2 _origin;
+        private Vector3 _origin;
+        private int _gridSize;
         
         private void Awake() {
             _shapeRotationController = GetComponent<ShapeRotationController>();
@@ -33,26 +34,27 @@ namespace CodeBlaze.Detris.Shapes {
         private void OnDrawGizmos() {
             if (CurrentShape == null) return;
             
-            UnityEngine.Debug.DrawLine(
-                new Vector3(_origin.x, 0 ,_origin.y), 
-                new Vector3(CurrentShape.Position.x, 0f, CurrentShape.Position.y),
-                Color.red
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(
+                _origin, 
+                CurrentShape.Position
             );
             
-            UnityEngine.Debug.DrawLine(
-                new Vector3(_origin.x, 0 ,_origin.y), 
-                new Vector3(CurrentShape.CrossPosition.x, 0f, CurrentShape.CrossPosition.y),
-                Color.cyan
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(
+                _origin, 
+                CurrentShape.CrossPosition
             );
         }
 
         public void UpdateCurrentShape(Shape currentShape) {
             CurrentShape = currentShape;
-            
-            UnityEngine.Debug.Log($"Position : {CurrentShape.Position} : Cross Position : {CurrentShape.CrossPosition}");
         }
 
-        public void setGridSize(int gridSize) => _origin = new Vector2((float) gridSize/ 2, (float) gridSize/ 2);
+        public void setGridSize(int gridSize) {
+            _gridSize = gridSize;
+            _origin = new Vector3((float) _gridSize/ 2, 0f, (float) _gridSize/ 2);
+        }
 
         private void OnSwipe(object sender, SwipeInputDetector.SwipeEventArgs e) {
             if (SwipeHelpers.MeanY(e) / Screen.height > _screenYSplit) {
@@ -61,31 +63,49 @@ namespace CodeBlaze.Detris.Shapes {
                 _shapeMovementController.Movement(swipeDirection);
             } else {
                 var swipeDirection = SwipeHelpers.GetHorizontalDirection(e);
-                CheckRotation(swipeDirection);
-                _shapeRotationController.Rotation(swipeDirection);
+                
+                if (CheckRotation(swipeDirection)) _shapeRotationController.Rotation(swipeDirection);
             }
         }
 
         private bool CheckRotation(SwipeDirection direction) {
-            var positionVec = CurrentShape.Position - _origin;
-            var crossPositionVec = CurrentShape.CrossPosition - _origin;
+            var newPosition = CurrentShape.Position - _origin;
+            var newCrossPosition = CurrentShape.CrossPosition - _origin;
+
+            Quaternion rot;
             
             switch (direction) {
                 case SwipeDirection.EAST:
-                    CurrentShape.Position = Quaternion.Euler(0f, 0f, 90) * positionVec;
-                    CurrentShape.CrossPosition = Quaternion.Euler(0f, 0f, 90) * crossPositionVec;
-
-                    UnityEngine.Debug.Log($"Position : {CurrentShape.Position} Cross Position : {CurrentShape.CrossPosition}");
-                    return false;
+                    rot = Quaternion.Euler(0, -90, 0);
+                    break;
                 case SwipeDirection.WEST:
-                    CurrentShape.Position = Quaternion.Euler(0f, 0f, -90) * positionVec;
-                    CurrentShape.CrossPosition = Quaternion.Euler(0f, 0f, -90) * crossPositionVec;
-                    
-                    UnityEngine.Debug.Log($"Position : {CurrentShape.Position} Cross Position : {CurrentShape.CrossPosition}");
-                    return false;
+                    rot = Quaternion.Euler(0, 90, 0);
+                    break;
+                default:
+                    throw new InvalidProgramException($"This should not happen : {direction}");
             }
             
-            throw new InvalidProgramException($"This should not happen, Direction : {direction}");
+            newPosition = rot * newPosition;
+            newCrossPosition = rot * newCrossPosition;
+            
+            newPosition += _origin;
+            newCrossPosition += _origin;
+
+            var check = BoundCheck(newPosition, newCrossPosition);
+
+            if (!check) return false;
+
+            CurrentShape.Position = newPosition;
+            CurrentShape.CrossPosition = newCrossPosition;
+
+            return true;
+        }
+
+        private bool BoundCheck(Vector3 newPosition, Vector3 newCrossPosition) {
+            if (newPosition.x > _gridSize || newPosition.z > _gridSize) return false;
+            if (newCrossPosition.x > _gridSize || newCrossPosition.z > _gridSize) return false;
+            
+            return true;
         }
 
     }

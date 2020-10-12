@@ -37,12 +37,12 @@ namespace CodeBlaze.Detris.Shapes {
                 new Shape(ShapeType.Z, new Color32(220, 220, 220, 255))
             });
 
-            SpawnShape(bag.GetItem(), Vector2.zero);
+            SpawnShape(bag.GetItem(), Vector3.forward);
         }
 
-        private void SpawnShape(Shape shape, Vector2 position) {
+        private void SpawnShape(Shape shape, Vector3 position) {
             shape.Position = position;
-            shape.CrossPosition = position + new Vector2(shape.Chunk.Size.x, shape.Chunk.Size.z);
+            shape.CrossPosition = position + new Vector3(shape.Chunk.Size.x, 0, shape.Chunk.Size.z);
             
             _shapeBehaviourPool.Claim().UpdateShape(shape);
             _shapeInputController.UpdateCurrentShape(shape);

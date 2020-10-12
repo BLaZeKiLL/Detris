@@ -42,7 +42,7 @@ namespace CodeBlaze.Detris.Shapes {
         public void UpdateShape(Shape shape) {
             _shape = shape;
             
-            transform.position = new Vector3(_shape.Position.x, _config.SpawnHeight, _shape.Position.y);
+            transform.position = new Vector3(_shape.Position.x, _config.SpawnHeight, _shape.Position.z);
             
             _chunkRenderer.Render(_shape.Chunk);
         }
