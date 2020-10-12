@@ -14,35 +14,42 @@ namespace CodeBlaze.Detris.Shapes {
         
         public void Movement(Shape shape, SwipeDirection swipeDirection) {
             var pivot = shape.Behaviour.transform.parent;
+
+            Vector3 mov;
             
             switch (swipeDirection) {
                 case SwipeDirection.NORTH:
-                    pivot.DOMove(pivot.position + new Vector3(-1, 0, -1), _movementDuration);
+                    mov = new Vector3(-1, 0, -1);
                     break;
                 case SwipeDirection.NORTH_EAST:
-                    pivot.DOMove(pivot.position + new Vector3(-1, 0, 0), _movementDuration);
+                    mov = new Vector3(-1, 0, 0);
                     break;
                 case SwipeDirection.EAST:
-                    pivot.DOMove(pivot.position + new Vector3(-1, 0, 1), _movementDuration);
+                    mov = new Vector3(-1, 0, 1);
                     break;
                 case SwipeDirection.SOUTH_EAST:
-                    pivot.DOMove(pivot.position + new Vector3(0, 0, 1), _movementDuration);
+                    mov = new Vector3(0, 0, 1);
                     break;
                 case SwipeDirection.SOUTH:
-                    pivot.DOMove(pivot.position + new Vector3(1, 0, 1), _movementDuration);
+                    mov = new Vector3(1, 0, 1);
                     break;
                 case SwipeDirection.SOUTH_WEST:
-                    pivot.DOMove(pivot.position + new Vector3(1, 0, 0), _movementDuration);
+                    mov = new Vector3(1, 0, 0);
                     break;
                 case SwipeDirection.WEST:
-                    pivot.DOMove(pivot.position + new Vector3(1, 0, -1), _movementDuration);
+                    mov = new Vector3(1, 0, -1);
                     break;
                 case SwipeDirection.NORTH_WEST:
-                    pivot.DOMove(pivot.position + new Vector3(0, 0, -1), _movementDuration);
+                    mov = new Vector3(0, 0, -1);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(swipeDirection), swipeDirection, null);
             }
+            
+            var newPosition = shape.Position + mov;
+            var newCrossPosition = shape.CrossPosition + mov;
+
+            pivot.DOMove(pivot.position + mov, _movementDuration);
         }
 
     }

@@ -101,7 +101,7 @@ namespace CodeBlaze.Detris.Shapes {
             return true;
         }
 
-        private bool BoundCheck(Vector3 newPosition, Vector3 newCrossPosition) {
+        public bool BoundCheck(Vector3 newPosition, Vector3 newCrossPosition) {
             if (newPosition.x > _gridSize || newPosition.z > _gridSize) return false;
             if (newCrossPosition.x > _gridSize || newCrossPosition.z > _gridSize) return false;
             
