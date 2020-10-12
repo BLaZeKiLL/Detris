@@ -18,18 +18,20 @@ namespace CodeBlaze.Detris.Shapes {
             _rotation = Vector3.zero;
         }
 
-        public void Rotation(SwipeDirection swipeDirection) {
+        public void Rotation(Shape shape, SwipeDirection swipeDirection) {
+            var pivot = shape.Behaviour.transform.parent;
+            
             switch (swipeDirection) {
                 case SwipeDirection.WEST:
                     _rotation += Vector3.up * 90;
                     if (Math.Abs(_rotation.y - 360) < float.Epsilon) _rotation = Vector3.zero;
-                    transform.DORotate(_rotation, _rotationDuration);
+                    pivot.DORotate(_rotation, _rotationDuration);
 
                     break;
                 case SwipeDirection.EAST:
                     _rotation += Vector3.up * -90;
                     if (Math.Abs(_rotation.y + 360) < float.Epsilon) _rotation = Vector3.zero;
-                    transform.DORotate(_rotation, _rotationDuration);
+                    pivot.DORotate(_rotation, _rotationDuration);
 
                     break;
             }

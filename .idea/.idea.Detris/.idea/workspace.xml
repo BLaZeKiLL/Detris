@@ -21,9 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,13 +86,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeChunkBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeGridBuilder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" />
       </list>
     </option>
@@ -177,7 +180,7 @@
       <workItem from="1602177929474" duration="2824000" />
       <workItem from="1602222900730" duration="8510000" />
       <workItem from="1602268522832" duration="2902000" />
-      <workItem from="1602482242045" duration="3770000" />
+      <workItem from="1602482242045" duration="5424000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>

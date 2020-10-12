@@ -60,11 +60,11 @@ namespace CodeBlaze.Detris.Shapes {
             if (SwipeHelpers.MeanY(e) / Screen.height > _screenYSplit) {
                 var swipeDirection = SwipeHelpers.GetOctalDirection(e);
                 
-                _shapeMovementController.Movement(swipeDirection);
+                _shapeMovementController.Movement(CurrentShape, swipeDirection);
             } else {
                 var swipeDirection = SwipeHelpers.GetHorizontalDirection(e);
                 
-                if (CheckRotation(swipeDirection)) _shapeRotationController.Rotation(swipeDirection);
+                if (CheckRotation(swipeDirection)) _shapeRotationController.Rotation(CurrentShape, swipeDirection);
             }
         }
 
@@ -82,7 +82,7 @@ namespace CodeBlaze.Detris.Shapes {
                     rot = Quaternion.Euler(0, 90, 0);
                     break;
                 default:
-                    throw new InvalidProgramException($"This should not happen : {direction}");
+                    throw new ArgumentOutOfRangeException($"This should not happen : {direction}");
             }
             
             newPosition = rot * newPosition;

@@ -15,7 +15,7 @@ namespace CodeBlaze.Detris.Shapes {
 
         public ShapeType Type { get; }
         public Chunk Chunk { get; }
-        
+        public ShapeBehaviour Behaviour { get; set; }
         public Vector3 Position { get;  set; }
         public Vector3 CrossPosition { get; set; }
 

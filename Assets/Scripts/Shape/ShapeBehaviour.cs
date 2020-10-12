@@ -21,11 +21,15 @@ namespace CodeBlaze.Detris.Shapes {
             transform.position += Vector3.down * (_config.FallSpeed * Time.deltaTime);
         }
 
-        public static ShapeBehaviour Instantiate(Transform parent, Config config) {
+        public static ShapeBehaviour Instantiate(Transform parent, Vector3 pivotPosition, Config config) {
             var shape = new GameObject("Shape", typeof(ChunkRenderer), typeof(ShapeBehaviour));
+            var pivot = new GameObject("Pivot");
 
-            shape.SetActive(false);
-            shape.transform.parent = parent;
+            pivot.SetActive(false);
+            
+            pivot.transform.position = pivotPosition;
+            pivot.transform.parent = parent;
+            shape.transform.parent = pivot.transform;
 
             var shapeBehaviour = shape.GetComponent<ShapeBehaviour>();
 
@@ -41,10 +45,9 @@ namespace CodeBlaze.Detris.Shapes {
 
         public void UpdateShape(Shape shape) {
             _shape = shape;
-            
-            transform.position = new Vector3(_shape.Position.x, _config.SpawnHeight, _shape.Position.z);
-            
+            _shape.Behaviour = this;
             _chunkRenderer.Render(_shape.Chunk);
+            transform.position = new Vector3(_shape.Position.x, _config.SpawnHeight, _shape.Position.z);
         }
 
         [Serializable]

@@ -15,7 +15,7 @@ namespace CodeBlaze.Detris.Shapes {
         private ShapeInputController _shapeInputController;
 
         private void Awake() {
-            transform.position = new Vector3((float) _gridSize / 2, 0, (float) _gridSize / 2);
+            var pivot = new Vector3((float) _gridSize / 2, 0, (float) _gridSize / 2);
 
             _shapeInputController = GetComponent<ShapeInputController>();
             
@@ -23,9 +23,9 @@ namespace CodeBlaze.Detris.Shapes {
 
             _shapeBehaviourPool = new LazyObjectPool<ShapeBehaviour>(
                 5,
-                index => ShapeBehaviour.Instantiate(transform, _shapeConfig),
-                sb => sb.gameObject.SetActive(true),
-                sb => sb.gameObject.SetActive(false)
+                index => ShapeBehaviour.Instantiate(transform, pivot, _shapeConfig),
+                sb => sb.transform.parent.gameObject.SetActive(true),
+                sb => sb.transform.parent.gameObject.SetActive(false)
             );
         }
 
@@ -37,7 +37,7 @@ namespace CodeBlaze.Detris.Shapes {
                 new Shape(ShapeType.Z, new Color32(220, 220, 220, 255))
             });
 
-            SpawnShape(bag.GetItem(), Vector3.forward);
+            SpawnShape(bag.GetItem(), Vector3.zero);
         }
 
         private void SpawnShape(Shape shape, Vector3 position) {
