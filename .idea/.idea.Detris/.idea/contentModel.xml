@@ -82,6 +82,7 @@
           </e>
           <e p="Util" t="Include">
             <e p="Singleton.cs" t="Include" />
+            <e p="TweenQueue.cs" t="Include" />
           </e>
           <e p="Voxel" t="Include">
             <e p="Block" t="Include">

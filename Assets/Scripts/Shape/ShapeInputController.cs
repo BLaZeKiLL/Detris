@@ -1,7 +1,6 @@
-﻿using System;
-
-using CodeBlaze.Detris.Input;
+﻿using CodeBlaze.Detris.Input;
 using CodeBlaze.Detris.Settings;
+using CodeBlaze.Detris.Util;
 
 using UnityEngine;
 
@@ -12,7 +11,11 @@ namespace CodeBlaze.Detris.Shapes {
         private ShapeMovementController _shapeMovementController;
         private ShapeRotationController _shapeRotationController;
 
+        private TweenQueue _tweenQueue;
+
         private void Awake() {
+            _tweenQueue = new TweenQueue();
+
             _shapeRotationController = GetComponent<ShapeRotationController>();
             _shapeMovementController = GetComponent<ShapeMovementController>();
         }
@@ -26,6 +29,8 @@ namespace CodeBlaze.Detris.Shapes {
         }
 
         public void UpdateCurrentShape(Shape currentShape) {
+            _tweenQueue.Clear();
+
             _shapeRotationController.UpdateShape(currentShape);
             _shapeMovementController.UpdateShape(currentShape);
         }
@@ -33,12 +38,12 @@ namespace CodeBlaze.Detris.Shapes {
         private void OnSwipe(object sender, SwipeInputDetector.SwipeEventArgs e) {
             if (SwipeHelpers.MeanY(e) / Screen.height > SettingsProvider.Current.Settings.ScreenSplit) {
                 var swipeDirection = SwipeHelpers.GetOctalDirection(e);
-                
-                _shapeMovementController.Movement(swipeDirection);
+
+                _shapeMovementController.Movement(swipeDirection, _tweenQueue);
             } else {
                 var swipeDirection = SwipeHelpers.GetHorizontalDirection(e);
-                
-                _shapeRotationController.Rotation(swipeDirection);
+
+                _shapeRotationController.Rotation(swipeDirection, _tweenQueue);
             }
         }
 
