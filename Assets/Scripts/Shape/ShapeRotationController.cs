@@ -44,9 +44,9 @@ namespace CodeBlaze.Detris.Shapes {
         }
 
         public void Rotation(SwipeDirection direction, TweenQueue tweenQueue) {
-            if (!CheckRotation(direction)) return;
-
             var pivot = _currentShape.Behaviour.transform.parent;
+
+            if (!CheckRotation(direction)) return;
 
             switch (direction) {
                 case SwipeDirection.WEST:

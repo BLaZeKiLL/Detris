@@ -59,7 +59,11 @@ namespace CodeBlaze.Detris.Shapes {
             var newPosition = _currentShape.Position + mov;
             var newCrossPosition = _currentShape.CrossPosition + mov;
 
-            if (!ShapeExtensions.BoundCheck(newPosition, newCrossPosition)) return;
+            if (!ShapeExtensions.BoundCheck(newPosition, newCrossPosition)) {
+                pivot.DOShakePosition(SettingsProvider.Current.Settings.TweenDuration, 0.1f);
+
+                return;
+            }
 
             _currentShape.Position = newPosition;
             _currentShape.CrossPosition = newCrossPosition;
