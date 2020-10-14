@@ -20,9 +20,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1ac158-0e95-4d95-a391-4dc0e95ac45f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DetrisChunk.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DetrisChunk/DetrisChunkBehaviour.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DetrisChunk/DetrisChunkBehaviour.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/Shape.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/Shape.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeBehaviour.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeBehaviour.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeChunkBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeChunkBuilder.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeInputController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeInputController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeMovementController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeMovementController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeRotationController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeRotationController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeSpawner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeType.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Detris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/Shape.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeChunkBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeChunkBuilder.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeInputController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeSpawner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeType.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +71,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Common/ObjectPools.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2348FB5E-CC9E-4E68-9F37-F7D7FADAEA9A/67/29e5aae4/ShortcutExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SceenRootController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SceneRootController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/MeshData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Shapes.cs" />
@@ -77,7 +109,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneRootController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Mesh/MeshBuilder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeChunkBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeGridBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeBehaviour.cs" />
@@ -90,6 +121,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Util/TweenQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeMovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shape/ShapeRotationController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Voxel/Renderer/ChunkRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DetrisChunk/DetrisChunkBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shapes/Shape.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shapes/ShapeChunkBuilder.cs" />
       </list>
     </option>
   </component>
@@ -179,6 +215,7 @@
       <workItem from="1602482242045" duration="10955000" />
       <workItem from="1602496932074" duration="8341000" />
       <workItem from="1602569700930" duration="3015000" />
+      <workItem from="1602659643814" duration="4298000" />
     </task>
     <task id="LOCAL-00001" summary="Greedy Mesher Implemented">
       <created>1600965789060</created>

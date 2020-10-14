@@ -11,11 +11,13 @@ namespace CodeBlaze.Detris.Shapes {
 
         public Shape(ShapeType type, Color32 color) {
             Type = type;
+            Color = color;
             Chunk = ShapeChunkBuilder.Build(type, color);
         }
 
         public ShapeType Type { get; }
         public Chunk Chunk { get; }
+        public Color32 Color { get; }
         public ShapeBehaviour Behaviour { get; set; }
         public Vector3 Position { get;  set; }
         public Vector3 CrossPosition { get; set; }

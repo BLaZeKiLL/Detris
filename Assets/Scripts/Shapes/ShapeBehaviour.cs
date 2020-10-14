@@ -54,7 +54,7 @@ namespace CodeBlaze.Detris.Shapes {
         public class Config {
 
             [SerializeField] public Material Material;
-            [SerializeField] public float SpawnHeight = 10f;
+            [SerializeField] public int SpawnHeight = 10;
             [SerializeField] public float FallSpeed = 9.81f;
 
         }
