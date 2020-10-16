@@ -9,10 +9,12 @@ using System.Collections;
 namespace IngameDebugConsole
 {
 	public class DebugLogPopup : MonoBehaviour, IPointerClickHandler {
-
 		public static event EventHandler<ToggleEventArgs> OnToggle; 
 		
 		private RectTransform popupTransform;
+
+		// Dimensions of the popup divided by 2
+		private Vector2 halfSize;
 
 		// Background image that will change color to indicate an alert
 		private Image backgroundImage;
@@ -77,19 +79,6 @@ namespace IngameDebugConsole
 			backgroundImage.color = alertColorError;
 		}
 
-		private void Reset()
-		{
-			newInfoCount = 0;
-			newWarningCount = 0;
-			newErrorCount = 0;
-
-			newInfoCountText.text = "0";
-			newWarningCountText.text = "0";
-			newErrorCountText.text = "0";
-
-			backgroundImage.color = normalColor;
-		}
-
 		// Popup is clicked
 		public void OnPointerClick( PointerEventData data )
 		{
@@ -102,7 +91,7 @@ namespace IngameDebugConsole
 			canvasGroup.interactable = true;
 			canvasGroup.blocksRaycasts = true;
 			canvasGroup.alpha = 1f;
-			
+
 			OnToggle?.Invoke(this, new ToggleEventArgs {
 				State = true
 			});
@@ -126,4 +115,5 @@ namespace IngameDebugConsole
 
 		}
 	}
+
 }
