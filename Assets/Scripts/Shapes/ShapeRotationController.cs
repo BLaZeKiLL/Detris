@@ -17,12 +17,8 @@ namespace CodeBlaze.Detris.Shapes {
 
         private Vector3 _newPosition;
         private Vector3 _origin;
-
-        private Vector3 _rotation;
-
+        
         private void Start() {
-            _rotation = Vector3.zero;
-
             var _gridSize = SettingsProvider.Current.Settings.GridSize;
             _origin = new Vector3((float) _gridSize / 2, 0f, (float) _gridSize / 2);
         }
@@ -50,13 +46,13 @@ namespace CodeBlaze.Detris.Shapes {
 
             switch (direction) {
                 case SwipeDirection.WEST:
-                    _rotation += Vector3.up * 90;
-                    if (Math.Abs(_rotation.y - 360) < float.Epsilon) _rotation = Vector3.zero;
+                    _currentShape.Rotation += Vector3.up * 90;
+                    if (Math.Abs(_currentShape.Rotation.y - 360) < float.Epsilon) _currentShape.Rotation = Vector3.zero;
 
                     break;
                 case SwipeDirection.EAST:
-                    _rotation += Vector3.up * -90;
-                    if (Math.Abs(_rotation.y + 360) < float.Epsilon) _rotation = Vector3.zero;
+                    _currentShape.Rotation += Vector3.up * -90;
+                    if (Math.Abs(_currentShape.Rotation.y + 360) < float.Epsilon) _currentShape.Rotation = Vector3.zero;
 
                     break;
                 default:
@@ -66,7 +62,7 @@ namespace CodeBlaze.Detris.Shapes {
             _currentShape.Position = _newPosition;
             _currentShape.CrossPosition = _newCrossPosition;
 
-            tweenQueue.Add(pivot.DORotate(_rotation, SettingsProvider.Current.Settings.TweenDuration));
+            tweenQueue.Add(pivot.DORotate(_currentShape.Rotation, SettingsProvider.Current.Settings.TweenDuration));
         }
 
         public void UpdateShape(Shape shape) {

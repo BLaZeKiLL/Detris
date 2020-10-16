@@ -34,10 +34,11 @@ namespace CodeBlaze.Detris.Shapes {
                 new Shape(ShapeType.Z, new Color32(220, 220, 220, 255))
             });
 
-            SpawnShape(bag.GetItem(), Vector3.zero);
+            SpawnShape(bag.GetItem(), Vector3.zero, Vector3.zero);
         }
 
-        private void SpawnShape(Shape shape, Vector3 position) {
+        private void SpawnShape(Shape shape, Vector3 position, Vector3 rotation) {
+            shape.Rotation = rotation;
             shape.Position = position;
             shape.CrossPosition = position + new Vector3(shape.Chunk.Size.x, 0, shape.Chunk.Size.z);
             

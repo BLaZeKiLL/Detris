@@ -60,7 +60,7 @@ namespace CodeBlaze.Detris.Shapes {
             var newCrossPosition = _currentShape.CrossPosition + mov;
 
             if (!ShapeExtensions.BoundCheck(newPosition, newCrossPosition)) {
-                pivot.DOShakePosition(SettingsProvider.Current.Settings.TweenDuration, 0.1f);
+                tweenQueue.Add(pivot.DOShakePosition(SettingsProvider.Current.Settings.TweenDuration, 0.1f));
 
                 return;
             }
