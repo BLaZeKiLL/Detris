@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace CodeBlaze.Detris.Settings {
 
+    [DefaultExecutionOrder(-200)]
     public class SettingsProvider : Singleton<SettingsProvider> {
         
         [SerializeField] private GameSettings _settings;

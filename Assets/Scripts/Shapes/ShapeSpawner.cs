@@ -1,4 +1,5 @@
-﻿using CodeBlaze.Detris.Settings;
+﻿using CodeBlaze.Detris.DetrisChunk;
+using CodeBlaze.Detris.Settings;
 using CodeBlaze.Library.Collections.Pools;
 using CodeBlaze.Library.Collections.Random;
 
@@ -34,7 +35,7 @@ namespace CodeBlaze.Detris.Shapes {
                 new Shape(ShapeType.Z, new Color32(220, 220, 220, 255))
             });
 
-            SpawnShape(bag.GetItem(), Vector3.zero, Vector3.zero);
+            SpawnShape(bag.GetItem(), Vector3.zero, Orientation.ZERO.Euler());
         }
 
         private void SpawnShape(Shape shape, Vector3 position, Vector3 rotation) {
@@ -44,6 +45,8 @@ namespace CodeBlaze.Detris.Shapes {
             
             _shapeBehaviourPool.Claim().UpdateShape(shape);
             _shapeInputController.UpdateCurrentShape(shape);
+            
+            DetrisChunkBehaviour.Current.AddShape(shape);
         }
 
         private void DeSpawnShape(ShapeBehaviour shapeBehaviour) {

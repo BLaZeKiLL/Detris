@@ -9,7 +9,7 @@ namespace CodeBlaze.Detris.Shapes {
     public class ShapeBehaviour : MonoBehaviour {
 
         private ChunkRenderer _chunkRenderer;
-
+        private Transform _pivot;
         private Config _config;
         private Shape _shape;
 
@@ -40,14 +40,18 @@ namespace CodeBlaze.Detris.Shapes {
 
         private void Initialize(Config config) {
             _config = config;
+            _pivot = transform.parent;
             _chunkRenderer.SetMaterial(config.Material);
         }
 
         public void UpdateShape(Shape shape) {
             _shape = shape;
             _shape.Behaviour = this;
+            
             _chunkRenderer.Render(_shape.Chunk);
+            
             transform.position = new Vector3(_shape.Position.x, _config.SpawnHeight, _shape.Position.z);
+            _pivot.rotation = Quaternion.Euler(_shape.Rotation);
         }
 
         [Serializable]

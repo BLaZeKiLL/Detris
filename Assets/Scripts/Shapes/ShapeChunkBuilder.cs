@@ -26,12 +26,16 @@ namespace CodeBlaze.Detris.Shapes {
         public static void Fill(Chunk chunk, Shape shape) {
             switch (shape.Type) {
                 case ShapeType.I:
+                    FillI(chunk, Vector3Int.FloorToInt(shape.Position), shape.Orientation(), shape.Color);
                     break;
                 case ShapeType.T:
+                    FillT(chunk, Vector3Int.FloorToInt(shape.Position), shape.Orientation(), shape.Color);
                     break;
                 case ShapeType.L:
+                    FillL(chunk, Vector3Int.FloorToInt(shape.Position), shape.Orientation(), shape.Color);
                     break;
                 case ShapeType.Z:
+                    FillZ(chunk, Vector3Int.FloorToInt(shape.Position), shape.Orientation(), shape.Color);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -43,17 +47,38 @@ namespace CodeBlaze.Detris.Shapes {
 
             chunk.Fill(BlockTypes.Air());
 
-            FillI(chunk, Vector3Int.zero, color);
+            FillI(chunk, Vector3Int.zero, Orientation.ZERO, color);
 
             return chunk;
         }
 
-        private static void FillI(Chunk chunk, Vector3Int position, Color32 color) {
+        private static void FillI(Chunk chunk, Vector3Int position, Orientation orientation, Color32 color) {
             var block = new Block(color);
-            
-            chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
-            chunk.SetBlock(block, position + new Vector3Int(1, 0, 0));
-            chunk.SetBlock(block, position + new Vector3Int(2, 0, 0));
+
+            switch (orientation) {
+                case Orientation.ZERO:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(1, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(2, 0, 0));
+                    break;
+                case Orientation.ONE_EIGHTY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(-1, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(-2, 0, 0));
+                    break;
+                case Orientation.NINETY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 1));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 2));
+                    break;
+                case Orientation.TWO_SEVENTY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, -1));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, -2));
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
+            }
         }
 
         private static Chunk T(Color32 color) {
@@ -61,18 +86,42 @@ namespace CodeBlaze.Detris.Shapes {
 
             chunk.Fill(BlockTypes.Air());
 
-            FillT(chunk, Vector3Int.zero, color);
+            FillT(chunk, Vector3Int.zero, Orientation.ZERO, color);
 
             return chunk;
         }
 
-        private static void FillT(Chunk chunk, Vector3Int position, Color32 color) {
+        private static void FillT(Chunk chunk, Vector3Int position, Orientation orientation, Color32 color) {
             var block = new Block(color);
 
-            chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
-            chunk.SetBlock(block, position + new Vector3Int(1, 0, 0));
-            chunk.SetBlock(block, position + new Vector3Int(1, 1, 0));
-            chunk.SetBlock(block, position + new Vector3Int(2, 0, 0));
+            switch (orientation) {
+                case Orientation.ZERO:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(1, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(1, 1, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(2, 0, 0));
+                    break;
+                case Orientation.ONE_EIGHTY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(-1, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(-1, 1, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(-2, 0, 0));
+                    break;
+                case Orientation.NINETY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 1));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 1, 1));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 2));
+                    break;
+                case Orientation.TWO_SEVENTY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, -1));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 1, -1));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, -2));
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
+            }
         }
 
         private static Chunk L(Color32 color) {
@@ -80,18 +129,42 @@ namespace CodeBlaze.Detris.Shapes {
 
             chunk.Fill(BlockTypes.Air());
 
-            FillL(chunk, Vector3Int.zero, color);
+            FillL(chunk, Vector3Int.zero, Orientation.ZERO, color);
 
             return chunk;
         }
 
-        private static void FillL(Chunk chunk, Vector3Int position, Color32 color) {
+        private static void FillL(Chunk chunk, Vector3Int position, Orientation orientation, Color32 color) {
             var block = new Block(color);
 
-            chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
-            chunk.SetBlock(block, position + new Vector3Int(1, 0, 0));
-            chunk.SetBlock(block, position + new Vector3Int(2, 0, 0));
-            chunk.SetBlock(block, position + new Vector3Int(2, 0, 1));
+            switch (orientation) {
+                case Orientation.ZERO:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(1, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(2, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(2, 0, 1));
+                    break;
+                case Orientation.NINETY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 1));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 2));
+                    chunk.SetBlock(block, position + new Vector3Int(-1, 0, 2));
+                    break;
+                case Orientation.ONE_EIGHTY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(-1, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(-2, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(-2, 0, -1));
+                    break;
+                case Orientation.TWO_SEVENTY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, -1));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, -2));
+                    chunk.SetBlock(block, position + new Vector3Int(1, 0, -2));
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
+            }
         }
 
         private static Chunk Z(Color32 color) {
@@ -99,18 +172,42 @@ namespace CodeBlaze.Detris.Shapes {
 
             chunk.Fill(BlockTypes.Air());
 
-            FillZ(chunk, Vector3Int.zero, color);
+            FillZ(chunk, Vector3Int.zero, Orientation.ZERO, color);
 
             return chunk;
         }
 
-        private static void FillZ(Chunk chunk, Vector3Int position, Color32 color) {
+        private static void FillZ(Chunk chunk, Vector3Int position, Orientation orientation, Color32 color) {
             var block = new Block(color);
 
-            chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
-            chunk.SetBlock(block, position + new Vector3Int(1, 0, 0));
-            chunk.SetBlock(block, position + new Vector3Int(1, 0, 1));
-            chunk.SetBlock(block, position + new Vector3Int(2, 0, 1));
+            switch (orientation) {
+                case Orientation.ZERO:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(1, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(1, 0, 1));
+                    chunk.SetBlock(block, position + new Vector3Int(2, 0, 1));
+                    break;
+                case Orientation.NINETY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 1));
+                    chunk.SetBlock(block, position + new Vector3Int(-1, 0, 1));
+                    chunk.SetBlock(block, position + new Vector3Int(-1, 0, 2));
+                    break;
+                case Orientation.ONE_EIGHTY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(-1, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(-1, 0, -1));
+                    chunk.SetBlock(block, position + new Vector3Int(-2, 0, -1));
+                    break;
+                case Orientation.TWO_SEVENTY:
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, 0));
+                    chunk.SetBlock(block, position + new Vector3Int(0, 0, -1));
+                    chunk.SetBlock(block, position + new Vector3Int(1, 0, -1));
+                    chunk.SetBlock(block, position + new Vector3Int(1, 0, -2));
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
+            }
         }
 
     }

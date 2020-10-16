@@ -11,7 +11,7 @@ namespace CodeBlaze.Detris.Util {
 
         [SerializeField] private bool _isPersistant;
 
-        private void Awake() {
+        protected virtual void Awake() {
             if (!Current) {
                 Current = this as T;
                 if (_isPersistant) DontDestroyOnLoad(gameObject);
