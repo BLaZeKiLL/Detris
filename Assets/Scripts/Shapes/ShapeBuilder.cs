@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CodeBlaze.Detris.Shapes {
 
-    public static class ShapeChunkBuilder {
+    public static class ShapeBuilder {
 
         public static Chunk Build(ShapeType type, Color32 color) {
             switch (type) {
@@ -22,6 +22,69 @@ namespace CodeBlaze.Detris.Shapes {
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
         }
+
+        private static Chunk I(Color32 color) {
+            var chunk = new Chunk(new Vector3Int(3, 1, 1));
+
+            chunk.Fill(BlockTypes.Air());
+            
+            var block = new Block(color);
+
+            chunk.SetBlock(block, 0,0,0);
+            chunk.SetBlock(block, 1,0,0);
+            chunk.SetBlock(block, 2,0,0);
+
+            return chunk;
+        }
+
+        private static Chunk T(Color32 color) {
+            var chunk = new Chunk(new Vector3Int(3, 2, 1));
+
+            chunk.Fill(BlockTypes.Air());
+
+            var block = new Block(color);
+            
+            chunk.SetBlock(block, 0, 0, 0);
+            chunk.SetBlock(block, 1, 0, 0);
+            chunk.SetBlock(block, 1, 1, 0);
+            chunk.SetBlock(block, 2, 0, 0);
+
+            return chunk;
+        }
+
+        private static Chunk L(Color32 color) {
+            var chunk = new Chunk(new Vector3Int(3, 1, 2));
+
+            chunk.Fill(BlockTypes.Air());
+            
+            var block = new Block(color);
+
+            chunk.SetBlock(block, 0, 0, 0);
+            chunk.SetBlock(block, 1, 0, 0);
+            chunk.SetBlock(block, 2, 0, 0);
+            chunk.SetBlock(block, 2, 0, 1);
+
+            return chunk;
+        }
+
+        private static Chunk Z(Color32 color) {
+            var chunk = new Chunk(new Vector3Int(3, 1, 2));
+
+            chunk.Fill(BlockTypes.Air());
+
+            var block = new Block(color);
+            
+            chunk.SetBlock(block, 0, 0, 0);
+            chunk.SetBlock(block, 1, 0, 0);
+            chunk.SetBlock(block, 1, 0, 1);
+            chunk.SetBlock(block, 2, 0, 1);
+
+            return chunk;
+        }
+
+    }
+
+    public static class ShapeFiller {
 
         public static void Fill(Chunk chunk, Shape shape) {
             switch (shape.Type) {
@@ -41,17 +104,7 @@ namespace CodeBlaze.Detris.Shapes {
                     throw new ArgumentOutOfRangeException();
             }
         }
-
-        private static Chunk I(Color32 color) {
-            var chunk = new Chunk(new Vector3Int(3, 1, 1));
-
-            chunk.Fill(BlockTypes.Air());
-
-            FillI(chunk, Vector3Int.zero, Orientation.ZERO, color);
-
-            return chunk;
-        }
-
+        
         private static void FillI(Chunk chunk, Vector3Int position, Orientation orientation, Color32 color) {
             var block = new Block(color);
 
@@ -80,17 +133,7 @@ namespace CodeBlaze.Detris.Shapes {
                     throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
             }
         }
-
-        private static Chunk T(Color32 color) {
-            var chunk = new Chunk(new Vector3Int(3, 2, 1));
-
-            chunk.Fill(BlockTypes.Air());
-
-            FillT(chunk, Vector3Int.zero, Orientation.ZERO, color);
-
-            return chunk;
-        }
-
+        
         private static void FillT(Chunk chunk, Vector3Int position, Orientation orientation, Color32 color) {
             var block = new Block(color);
 
@@ -122,16 +165,6 @@ namespace CodeBlaze.Detris.Shapes {
                 default:
                     throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
             }
-        }
-
-        private static Chunk L(Color32 color) {
-            var chunk = new Chunk(new Vector3Int(3, 1, 2));
-
-            chunk.Fill(BlockTypes.Air());
-
-            FillL(chunk, Vector3Int.zero, Orientation.ZERO, color);
-
-            return chunk;
         }
 
         private static void FillL(Chunk chunk, Vector3Int position, Orientation orientation, Color32 color) {
@@ -166,17 +199,7 @@ namespace CodeBlaze.Detris.Shapes {
                     throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
             }
         }
-
-        private static Chunk Z(Color32 color) {
-            var chunk = new Chunk(new Vector3Int(3, 1, 2));
-
-            chunk.Fill(BlockTypes.Air());
-
-            FillZ(chunk, Vector3Int.zero, Orientation.ZERO, color);
-
-            return chunk;
-        }
-
+        
         private static void FillZ(Chunk chunk, Vector3Int position, Orientation orientation, Color32 color) {
             var block = new Block(color);
 
@@ -209,7 +232,7 @@ namespace CodeBlaze.Detris.Shapes {
                     throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
             }
         }
-
+        
     }
-
+    
 }

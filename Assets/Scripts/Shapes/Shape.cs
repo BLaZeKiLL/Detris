@@ -12,7 +12,7 @@ namespace CodeBlaze.Detris.Shapes {
         public Shape(ShapeType type, Color32 color) {
             Type = type;
             Color = color;
-            Chunk = ShapeChunkBuilder.Build(type, color);
+            Chunk = ShapeBuilder.Build(type, color);
         }
 
         public ShapeType Type { get; }

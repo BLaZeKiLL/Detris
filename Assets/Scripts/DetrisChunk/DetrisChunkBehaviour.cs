@@ -33,7 +33,7 @@ namespace CodeBlaze.Detris.DetrisChunk {
         }
 
         public void AddShape(Shape shape) {
-            ShapeChunkBuilder.Fill(_chunk, shape);
+            ShapeFiller.Fill(_chunk, shape);
             _renderer.Render(_chunk);
         }
 

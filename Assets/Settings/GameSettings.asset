@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232d8b6e704d44ef8a5e9b93a3fc118f, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
+  SwipeThreshold: 10
   ScreenSplit: 0.3
   GridSize: 3
   TweenDuration: 1
