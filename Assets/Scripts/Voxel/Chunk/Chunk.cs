@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -52,6 +53,12 @@ namespace CodeBlaze.Voxel {
                         chunk.SetBlock(block, x, y, z);
                     }
                 }
+            }
+        }
+
+        public static void Fill(this Chunk chunk, IEnumerable<Vector3Int> indexes, Block block) {
+            foreach (var index in indexes) {
+                chunk.SetBlock(block, index);
             }
         }
 

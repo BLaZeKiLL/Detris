@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using CodeBlaze.Detris.Settings;
 using CodeBlaze.Voxel;
@@ -28,10 +29,16 @@ namespace CodeBlaze.Detris.Shapes {
     public static class ShapeExtensions {
 
         public static Orientation Orientation(this Shape shape) {
-            if (shape.Rotation.y - 0 <= float.Epsilon) return Shapes.Orientation.ZERO;
-            if (shape.Rotation.y - 90 <= float.Epsilon) return Shapes.Orientation.NINETY;
-            if (shape.Rotation.y - 180 <= float.Epsilon) return Shapes.Orientation.ONE_EIGHTY;
-            return Shapes.Orientation.TWO_SEVENTY;
+            if (Mathf.Approximately(shape.Rotation.y, 0f)) 
+                return Shapes.Orientation.ZERO;
+            if (Mathf.Approximately(shape.Rotation.y, 90f) || Mathf.Approximately(shape.Rotation.y, -90f)) 
+                return Shapes.Orientation.NINETY;
+            if (Mathf.Approximately(shape.Rotation.y, 180f) || Mathf.Approximately(shape.Rotation.y, -180f)) 
+                return Shapes.Orientation.ONE_EIGHTY;
+            if (Mathf.Approximately(shape.Rotation.y, 270f) || Mathf.Approximately(shape.Rotation.y, -270f)) 
+                return Shapes.Orientation.TWO_SEVENTY;
+            
+            throw new InvalidProgramException("This should not happen");
         }
         
         public static bool BoundCheck(Vector3 newPosition, Vector3 newCrossPosition) {
@@ -43,6 +50,171 @@ namespace CodeBlaze.Detris.Shapes {
             if (newCrossPosition.x < 0 || newCrossPosition.z < 0) return false;
             
             return true;
+        }
+        
+        public static IEnumerable<Vector3Int> GetIndexes(this Shape shape) {
+            switch (shape.Type) {
+                case ShapeType.I:
+                    return IndexI(shape.PositionToIndex(), shape.Orientation());
+                case ShapeType.T:
+                    return IndexT(shape.PositionToIndex(), shape.Orientation());
+                case ShapeType.L:
+                    return IndexL(shape.PositionToIndex(), shape.Orientation());
+                case ShapeType.Z:
+                    return IndexZ(shape.PositionToIndex(), shape.Orientation());
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        public static Vector3Int PositionToIndex(this Shape shape) {
+            var x = Mathf.RoundToInt(shape.Position.x);
+            var y = Mathf.RoundToInt(shape.Position.y);
+            var z = Mathf.RoundToInt(shape.Position.z);
+            
+            var xdir = Mathf.Sign(shape.CrossPosition.x - shape.Position.x);
+            var zdir = Mathf.Sign(shape.CrossPosition.z - shape.Position.z);
+
+            if (Mathf.Approximately(xdir, -1f)) x -= 1;
+            if (Mathf.Approximately(zdir, -1f)) z -= 1;
+            
+            return new Vector3Int(x,y,z);
+        }
+        
+        private static IEnumerable<Vector3Int> IndexI(Vector3Int position, Orientation orientation) {
+            var indexes = new List<Vector3Int>();
+
+            switch (orientation) {
+                case Shapes.Orientation.ZERO:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(1, 0, 0));
+                    indexes.Add(position + new Vector3Int(2, 0, 0));
+                    break;
+                case Shapes.Orientation.ONE_EIGHTY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(-1, 0, 0));
+                    indexes.Add(position + new Vector3Int(-2, 0, 0));
+                    break;
+                case Shapes.Orientation.NINETY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(0, 0, 1));
+                    indexes.Add(position + new Vector3Int(0, 0, 2));
+                    break;
+                case Shapes.Orientation.TWO_SEVENTY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(0, 0, -1));
+                    indexes.Add(position + new Vector3Int(0, 0, -2));
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
+            }
+
+            return indexes;
+        }
+        
+        private static IEnumerable<Vector3Int> IndexT(Vector3Int position, Orientation orientation) {
+            var indexes = new List<Vector3Int>();
+
+            switch (orientation) {
+                case Shapes.Orientation.ZERO:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(1, 0, 0));
+                    indexes.Add(position + new Vector3Int(1, 1, 0));
+                    indexes.Add(position + new Vector3Int(2, 0, 0));
+                    break;
+                case Shapes.Orientation.ONE_EIGHTY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(-1, 0, 0));
+                    indexes.Add(position + new Vector3Int(-1, 1, 0));
+                    indexes.Add(position + new Vector3Int(-2, 0, 0));
+                    break;
+                case Shapes.Orientation.NINETY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(0, 0, 1));
+                    indexes.Add(position + new Vector3Int(0, 1, 1));
+                    indexes.Add(position + new Vector3Int(0, 0, 2));
+                    break;
+                case Shapes.Orientation.TWO_SEVENTY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(0, 0, -1));
+                    indexes.Add(position + new Vector3Int(0, 1, -1));
+                    indexes.Add(position + new Vector3Int(0, 0, -2));
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
+            }
+
+            return indexes;
+        }
+
+        private static IEnumerable<Vector3Int> IndexL(Vector3Int position, Orientation orientation) {
+            var indexes = new List<Vector3Int>();
+
+            switch (orientation) {
+                case Shapes.Orientation.ZERO:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(1, 0, 0));
+                    indexes.Add(position + new Vector3Int(2, 0, 0));
+                    indexes.Add(position + new Vector3Int(2, 0, 1));
+                    break;
+                case Shapes.Orientation.NINETY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(0, 0, 1));
+                    indexes.Add(position + new Vector3Int(0, 0, 2));
+                    indexes.Add(position + new Vector3Int(-1, 0, 2));
+                    break;
+                case Shapes.Orientation.ONE_EIGHTY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(-1, 0, 0));
+                    indexes.Add(position + new Vector3Int(-2, 0, 0));
+                    indexes.Add(position + new Vector3Int(-2, 0, -1));
+                    break;
+                case Shapes.Orientation.TWO_SEVENTY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(0, 0, -1));
+                    indexes.Add(position + new Vector3Int(0, 0, -2));
+                    indexes.Add(position + new Vector3Int(1, 0, -2));
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
+            }
+
+            return indexes;
+        }
+        
+        private static IEnumerable<Vector3Int> IndexZ(Vector3Int position, Orientation orientation) {
+            var indexes = new List<Vector3Int>();
+
+            switch (orientation) {
+                case Shapes.Orientation.ZERO:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(1, 0, 0));
+                    indexes.Add(position + new Vector3Int(1, 0, 1));
+                    indexes.Add(position + new Vector3Int(2, 0, 1));
+                    break;
+                case Shapes.Orientation.NINETY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(0, 0, 1));
+                    indexes.Add(position + new Vector3Int(-1, 0, 1));
+                    indexes.Add(position + new Vector3Int(-1, 0, 2));
+                    break;
+                case Shapes.Orientation.ONE_EIGHTY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(-1, 0, 0));
+                    indexes.Add(position + new Vector3Int(-1, 0, -1));
+                    indexes.Add(position + new Vector3Int(-2, 0, -1));
+                    break;
+                case Shapes.Orientation.TWO_SEVENTY:
+                    indexes.Add(position + new Vector3Int(0, 0, 0));
+                    indexes.Add(position + new Vector3Int(0, 0, -1));
+                    indexes.Add(position + new Vector3Int(1, 0, -1));
+                    indexes.Add(position + new Vector3Int(1, 0, -2));
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(orientation), orientation, null);
+            }
+
+            return indexes;
         }
 
     }

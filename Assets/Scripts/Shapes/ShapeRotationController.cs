@@ -47,12 +47,12 @@ namespace CodeBlaze.Detris.Shapes {
             switch (direction) {
                 case SwipeDirection.WEST:
                     _currentShape.Rotation += Vector3.up * 90;
-                    if (Math.Abs(_currentShape.Rotation.y - 360) < float.Epsilon) _currentShape.Rotation = Vector3.zero;
+                    if (Mathf.Approximately(_currentShape.Rotation.y, 360f)) _currentShape.Rotation = Vector3.zero;
 
                     break;
                 case SwipeDirection.EAST:
                     _currentShape.Rotation += Vector3.up * -90;
-                    if (Math.Abs(_currentShape.Rotation.y + 360) < float.Epsilon) _currentShape.Rotation = Vector3.zero;
+                    if (Mathf.Approximately(_currentShape.Rotation.y, -360f)) _currentShape.Rotation = Vector3.zero;
 
                     break;
                 default:

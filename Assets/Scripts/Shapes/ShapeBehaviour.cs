@@ -1,5 +1,6 @@
 ﻿using System;
 
+using CodeBlaze.Detris.DetrisChunk;
 using CodeBlaze.Voxel.Renderer;
 
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace CodeBlaze.Detris.Shapes {
 
     public class ShapeBehaviour : MonoBehaviour {
 
+        private ShapeSpawner _spawner;
         private ChunkRenderer _chunkRenderer;
         private Transform _pivot;
         private Config _config;
@@ -18,27 +20,21 @@ namespace CodeBlaze.Detris.Shapes {
         }
 
         private void Update() {
-            transform.position += Vector3.down * (_config.FallSpeed * Time.deltaTime);
+            var position = transform.position;
+            position += Vector3.down * (_config.FallSpeed * Time.deltaTime);
+
+            _shape.Position = new Vector3(_shape.Position.x, position.y, _shape.Position.z);
+            _shape.CrossPosition = new Vector3(_shape.CrossPosition.x, position.y, _shape.CrossPosition.z);
+
+            transform.position = position;
+
+            if (!DetrisChunkBehaviour.Current.Check(_shape)) return;
+
+            _spawner.DeSpawnShape(this);
         }
 
-        public static ShapeBehaviour Instantiate(Transform parent, Vector3 pivotPosition, Config config) {
-            var shape = new GameObject("Shape", typeof(ChunkRenderer), typeof(ShapeBehaviour));
-            var pivot = new GameObject("Pivot");
-
-            pivot.SetActive(false);
-            
-            pivot.transform.position = pivotPosition;
-            pivot.transform.parent = parent;
-            shape.transform.parent = pivot.transform;
-
-            var shapeBehaviour = shape.GetComponent<ShapeBehaviour>();
-
-            shapeBehaviour.Initialize(config);
-
-            return shapeBehaviour;
-        }
-
-        private void Initialize(Config config) {
+        private void Initialize(ShapeSpawner spawner, Config config) {
+            _spawner = spawner;
             _config = config;
             _pivot = transform.parent;
             _chunkRenderer.SetMaterial(config.Material);
@@ -61,6 +57,23 @@ namespace CodeBlaze.Detris.Shapes {
             [SerializeField] public int SpawnHeight = 10;
             [SerializeField] public float FallSpeed = 9.81f;
 
+        }
+        
+        public static ShapeBehaviour Instantiate(ShapeSpawner spawner, Transform parent, Vector3 pivotPosition, Config config) {
+            var shape = new GameObject("Shape", typeof(ChunkRenderer), typeof(ShapeBehaviour));
+            var pivot = new GameObject("Pivot");
+
+            pivot.SetActive(false);
+            
+            pivot.transform.position = pivotPosition;
+            pivot.transform.parent = parent;
+            shape.transform.parent = pivot.transform;
+
+            var shapeBehaviour = shape.GetComponent<ShapeBehaviour>();
+
+            shapeBehaviour.Initialize(spawner, config);
+
+            return shapeBehaviour;
         }
 
     }

@@ -164,10 +164,8 @@ namespace CodeBlaze.Voxel.Mesh {
                 normals.ToArray()
             );
 
-            vertices.Clear();
-            triangles.Clear();
-            colors.Clear();
-            index = 0;
+            // Clear Builder
+            Clear();
 
             return data;
         }
@@ -217,6 +215,14 @@ namespace CodeBlaze.Voxel.Mesh {
             colors.Add(mask.color);
         }
 
+        private void Clear() {
+            vertices.Clear();
+            triangles.Clear();
+            colors.Clear();
+            normals.Clear();
+            index = 0;
+        }
+        
         private readonly struct Mask {
 
             public readonly Color32 color;
