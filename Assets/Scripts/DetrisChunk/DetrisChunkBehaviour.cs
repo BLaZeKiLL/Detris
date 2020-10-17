@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Linq;
 
-using CodeBlaze.Detris.Settings;
 using CodeBlaze.Detris.Shapes;
 using CodeBlaze.Detris.Util;
 using CodeBlaze.Voxel;
 using CodeBlaze.Voxel.Renderer;
 
+using UnityEditor;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+using SettingsProvider = CodeBlaze.Detris.Settings.SettingsProvider;
 
 namespace CodeBlaze.Detris.DetrisChunk {
 
@@ -39,6 +42,16 @@ namespace CodeBlaze.Detris.DetrisChunk {
             _renderer.Render(_chunk);
         }
 
+        private void OnDrawGizmos() {
+            if (!Application.isPlaying) return;
+            for (int x = 0; x < _heightMap.GetLength(0); x++) {
+                for (int z = 0; z < _heightMap.GetLength(1); z++) {
+                    var y = _heightMap[x, z];
+                    Handles.Label(new Vector3(x + 0.5f, y, z + 0.5f), $"{y}");
+                }
+            }
+        }
+
         public bool Check(Shape shape) {
             var indexes = shape.GetIndexes().ToArray();
             
@@ -46,22 +59,25 @@ namespace CodeBlaze.Detris.DetrisChunk {
             
             foreach (var index in indexes) {
                 try {
-                    var temp = _heightMap[index.x, index.z] >= shape.Position.y;
-                    result |= temp;
-                    if (temp)
-                        if(++_heightMap[index.x, index.z] >= SettingsProvider.Current.Settings.ShapeConfig.SpawnHeight)
-                            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    result |= _heightMap[index.x, index.z] >= shape.Position.y;
                 } catch (IndexOutOfRangeException) {
                     throw new IndexOutOfRangeException($"Height Map Index Out Of Range : {index}");
                 }
             }
-            
-            if (result) {
-                _chunk.Fill(indexes, new Block(shape.Color));
-                _renderer.Render(_chunk);
-            }
 
-            return result;
+            if (!result) return false;
+            
+            foreach (var index in indexes) {
+                _heightMap[index.x, index.z] = index.y + 1;
+                
+                if(_heightMap[index.x, index.z] >= SettingsProvider.Current.Settings.ShapeConfig.SpawnHeight)
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            
+            _chunk.Fill(indexes, new Block(shape.Color));
+            _renderer.Render(_chunk);
+            
+            return true;
         }
 
     }

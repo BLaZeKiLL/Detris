@@ -24,6 +24,7 @@ namespace CodeBlaze.Detris.Shapes {
         }
 
         private void OnDrawGizmos() {
+            if (!Application.isPlaying) return;
             if (_currentShape == null) return;
 
             Gizmos.color = Color.red;
