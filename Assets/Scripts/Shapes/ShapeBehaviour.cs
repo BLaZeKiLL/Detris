@@ -64,8 +64,6 @@ namespace CodeBlaze.Detris.Shapes {
             var pivot = new GameObject("Pivot");
 
             pivot.SetActive(false);
-            
-            pivot.transform.position = pivotPosition;
             pivot.transform.parent = parent;
             shape.transform.parent = pivot.transform;
 

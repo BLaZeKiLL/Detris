@@ -17,14 +17,20 @@ namespace CodeBlaze.Detris.Shapes {
         
         private void Awake() {
             var gridSize = SettingsProvider.Current.Settings.GridSize;
-            var pivot = new Vector3((float) gridSize / 2, 0, (float) gridSize / 2);
+            var pivotPosition = new Vector3((float) gridSize / 2, 0, (float) gridSize / 2);
 
             _shapeInputController = GetComponent<ShapeInputController>();
             
             _shapeBehaviourPool = new ObjectPool<ShapeBehaviour>(
                 5,
-                index => ShapeBehaviour.Instantiate(this, transform, pivot, SettingsProvider.Current.Settings.ShapeConfig),
-                sb => sb.transform.parent.gameObject.SetActive(true),
+                index => ShapeBehaviour.Instantiate(this, transform, pivotPosition, SettingsProvider.Current.Settings.ShapeConfig),
+                sb => {
+                    var pivot = sb.transform.parent;
+                    
+                    pivot.transform.position = pivotPosition;
+
+                    pivot.gameObject.SetActive(true);
+                },
                 sb => sb.transform.parent.gameObject.SetActive(false)
             );
             
