@@ -59,7 +59,8 @@ namespace CodeBlaze.Detris.DetrisChunk {
             
             foreach (var index in indexes) {
                 try {
-                    result |= _heightMap[index.x, index.z] >= shape.Position.y;
+                    result = _heightMap[index.x, index.z] >= shape.Position.y;
+                    if (result) break;
                 } catch (IndexOutOfRangeException) {
                     throw new IndexOutOfRangeException($"Height Map Index Out Of Range : {index}");
                 }

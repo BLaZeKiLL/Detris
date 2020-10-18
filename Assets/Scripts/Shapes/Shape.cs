@@ -28,19 +28,6 @@ namespace CodeBlaze.Detris.Shapes {
 
     public static class ShapeExtensions {
 
-        public static Orientation Orientation(this Shape shape) {
-            if (Mathf.Approximately(shape.Rotation.y, 0f)) 
-                return Shapes.Orientation.ZERO;
-            if (Mathf.Approximately(shape.Rotation.y, 90f) || Mathf.Approximately(shape.Rotation.y, -90f)) 
-                return Shapes.Orientation.NINETY;
-            if (Mathf.Approximately(shape.Rotation.y, 180f) || Mathf.Approximately(shape.Rotation.y, -180f)) 
-                return Shapes.Orientation.ONE_EIGHTY;
-            if (Mathf.Approximately(shape.Rotation.y, 270f) || Mathf.Approximately(shape.Rotation.y, -270f)) 
-                return Shapes.Orientation.TWO_SEVENTY;
-            
-            throw new InvalidProgramException("This should not happen");
-        }
-        
         public static bool BoundCheck(Vector3 newPosition, Vector3 newCrossPosition) {
             var _gridSize = SettingsProvider.Current.Settings.GridSize;
             
@@ -79,6 +66,19 @@ namespace CodeBlaze.Detris.Shapes {
             if (Mathf.Approximately(zdir, -1f)) z -= 1;
             
             return new Vector3Int(x,y,z);
+        }
+        
+        public static Orientation Orientation(this Shape shape) {
+            if (Mathf.Approximately(shape.Rotation.y, 0f)) 
+                return Shapes.Orientation.ZERO;
+            if (Mathf.Approximately(shape.Rotation.y, 270f) || Mathf.Approximately(shape.Rotation.y, -90f)) 
+                return Shapes.Orientation.NINETY;
+            if (Mathf.Approximately(shape.Rotation.y, 180f) || Mathf.Approximately(shape.Rotation.y, -180f)) 
+                return Shapes.Orientation.ONE_EIGHTY;
+            if (Mathf.Approximately(shape.Rotation.y, 90f) || Mathf.Approximately(shape.Rotation.y, -270f)) 
+                return Shapes.Orientation.TWO_SEVENTY;
+            
+            throw new InvalidProgramException("This should not happen");
         }
         
         private static IEnumerable<Vector3Int> IndexI(Vector3Int position, Orientation orientation) {
