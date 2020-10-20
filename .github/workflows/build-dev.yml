@@ -30,9 +30,7 @@ jobs:
         with:
           path: Library
           key: Library-${{ matrix.targetPlatform }}
-      - name: Enviornment info
-        run: printenv
-      - uses: webbertakken/unity-builder@main
+      - uses: webbertakken/unity-builder@v1.4
         with:
           customImage: unityci/editor:2020.1.9f1-android-0
           versioning: Semantic
