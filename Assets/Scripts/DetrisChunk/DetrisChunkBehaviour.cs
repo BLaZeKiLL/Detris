@@ -3,6 +3,7 @@ using System.Linq;
 
 using CodeBlaze.Detris.Shapes;
 using CodeBlaze.Detris.Util;
+using CodeBlaze.Library.Behaviour;
 using CodeBlaze.Voxel;
 using CodeBlaze.Voxel.Renderer;
 
