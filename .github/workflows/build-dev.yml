@@ -19,7 +19,7 @@ jobs:
       fail-fast: false
       matrix:
         unityVersion:
-          - 2020.1.6f1
+          - 2020.1.9f1
         targetPlatform:
           - Android
     steps:
@@ -32,11 +32,13 @@ jobs:
           key: Library-${{ matrix.targetPlatform }}
       - name: Enviornment info
         run: printenv
-      - uses: webbertakken/unity-builder@v1.4
+      - uses: webbertakken/unity-builder@main
         with:
+          customImage: unityci/editor:2020.1.9f1-android-0
           versioning: Semantic
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
+          buildMethod: Editor.Build.AndroidBuilder.DevelopmentBuild
       - uses: actions/upload-artifact@v2
         with:
           name: Build
