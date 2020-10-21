@@ -2,7 +2,6 @@
 using System.Linq;
 
 using CodeBlaze.Detris.Shapes;
-using CodeBlaze.Detris.Util;
 using CodeBlaze.Library.Behaviour;
 using CodeBlaze.Voxel;
 using CodeBlaze.Voxel.Renderer;
@@ -71,9 +70,11 @@ namespace CodeBlaze.Detris.DetrisChunk {
             
             foreach (var index in indexes) {
                 _heightMap[index.x, index.z] = index.y + 1;
-                
-                if(_heightMap[index.x, index.z] >= SettingsProvider.Current.Settings.ShapeConfig.SpawnHeight)
+
+                if (_heightMap[index.x, index.z] >= SettingsProvider.Current.Settings.ShapeConfig.SpawnHeight) {
+                    // TODO Pause here and show the glorious chunk
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
             }
             
             _chunk.Fill(indexes, new Block(shape.Color));

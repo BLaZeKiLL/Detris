@@ -13,8 +13,8 @@ namespace CodeBlaze.Detris.Shapes {
     public class ShapeRotationController : MonoBehaviour {
 
         private Shape _currentShape;
+        
         private Vector3 _newCrossPosition;
-
         private Vector3 _newPosition;
         private Vector3 _origin;
         

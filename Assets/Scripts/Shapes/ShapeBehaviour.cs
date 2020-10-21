@@ -46,8 +46,11 @@ namespace CodeBlaze.Detris.Shapes {
             
             _chunkRenderer.Render(_shape.Chunk);
             
-            transform.position = new Vector3(_shape.Position.x, _config.SpawnHeight, _shape.Position.z);
+            // TODO find out why setting rotation first avoids position issue
+            // maybe
+            // since pivot is a parent transform changes to it propogate to children
             _pivot.rotation = Quaternion.Euler(_shape.Rotation);
+            transform.position = new Vector3(_shape.Position.x, _config.SpawnHeight, _shape.Position.z);
         }
 
         [Serializable]
@@ -65,6 +68,7 @@ namespace CodeBlaze.Detris.Shapes {
 
             pivot.SetActive(false);
             pivot.transform.parent = parent;
+            pivot.transform.position = pivotPosition;
             shape.transform.parent = pivot.transform;
 
             var shapeBehaviour = shape.GetComponent<ShapeBehaviour>();

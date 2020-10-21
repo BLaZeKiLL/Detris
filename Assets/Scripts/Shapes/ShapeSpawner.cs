@@ -1,4 +1,5 @@
-﻿using CodeBlaze.Detris.DetrisChunk;
+﻿using System;
+
 using CodeBlaze.Detris.Settings;
 using CodeBlaze.Library.Collections.Pools;
 using CodeBlaze.Library.Collections.Random;
@@ -13,7 +14,7 @@ namespace CodeBlaze.Detris.Shapes {
 
         private ShapeInputController _shapeInputController;
 
-        private RandomBag<Shape> _bag;
+        private RandomBag<ShapeType> _bag;
         
         private void Awake() {
             var gridSize = SettingsProvider.Current.Settings.GridSize;
@@ -21,29 +22,23 @@ namespace CodeBlaze.Detris.Shapes {
 
             _shapeInputController = GetComponent<ShapeInputController>();
             
-            _shapeBehaviourPool = new ObjectPool<ShapeBehaviour>(
-                5,
+            _shapeBehaviourPool = new LazyObjectPool<ShapeBehaviour>(
+                5, // max number of objects if required the pool can create
                 index => ShapeBehaviour.Instantiate(this, transform, pivotPosition, SettingsProvider.Current.Settings.ShapeConfig),
-                sb => {
-                    var pivot = sb.transform.parent;
-                    
-                    pivot.transform.position = pivotPosition;
-
-                    pivot.gameObject.SetActive(true);
-                },
+                sb => sb.transform.parent.gameObject.SetActive(true),
                 sb => sb.transform.parent.gameObject.SetActive(false)
             );
-            
-            _bag = new RandomBag<Shape>(new[] {
-                new Shape(ShapeType.I, new Color32(220, 10, 10, 255)),
-                new Shape(ShapeType.L, new Color32(10, 220, 10, 255)),
-                new Shape(ShapeType.T, new Color32(10, 10, 220, 255)),
-                new Shape(ShapeType.Z, new Color32(220, 220, 220, 255))
+
+            _bag = new RandomBag<ShapeType>(new [] {
+                ShapeType.I,
+                ShapeType.L,
+                ShapeType.T,
+                ShapeType.Z
             });
         }
 
         private void Start() {
-            SpawnShape(_bag.GetItem(), Vector3.zero, Orientation.ZERO.Euler());
+            SpawnShape(CreateShape(_bag.GetItem()), Vector3.zero, Orientation.ZERO.Euler());
         }
 
         private void SpawnShape(Shape shape, Vector3 position, Vector3 rotation) {
@@ -58,9 +53,23 @@ namespace CodeBlaze.Detris.Shapes {
         public void DeSpawnShape(ShapeBehaviour shapeBehaviour) {
             _shapeBehaviourPool.Reclaim(shapeBehaviour);
             
-            SpawnShape(_bag.GetItem(), Vector3.zero, Orientation.ZERO.Euler());
+            SpawnShape(CreateShape(_bag.GetItem()), Vector3.zero, Orientation.ZERO.Euler());
         }
 
+        private Shape CreateShape(ShapeType type) {
+            switch (type) {
+                case ShapeType.I:
+                    return new Shape(ShapeType.I, new Color32(220, 10, 10, 255));
+                case ShapeType.T:
+                    return new Shape(ShapeType.L, new Color32(10, 220, 10, 255));
+                case ShapeType.L:
+                    return new Shape(ShapeType.T, new Color32(10, 10, 220, 255));
+                case ShapeType.Z:
+                    return new Shape(ShapeType.Z, new Color32(220, 220, 220, 255));
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+        }
     }
 
 }

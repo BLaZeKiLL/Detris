@@ -3,7 +3,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Collections;
 
 // Manager class for the debug popup
 namespace IngameDebugConsole
