@@ -23,6 +23,7 @@ namespace CodeBlaze.Detris.Shapes {
             _origin = new Vector3((float) _gridSize / 2, 0f, (float) _gridSize / 2);
         }
 
+#if UNITY_EDITOR
         private void OnDrawGizmos() {
             if (!Application.isPlaying) return;
             if (_currentShape == null) return;
@@ -39,6 +40,7 @@ namespace CodeBlaze.Detris.Shapes {
                 _currentShape.CrossPosition
             );
         }
+#endif
 
         public void Rotation(SwipeDirection direction, TweenQueue tweenQueue) {
             var pivot = _currentShape.Behaviour.transform.parent;

@@ -42,6 +42,7 @@ namespace CodeBlaze.Detris.DetrisChunk {
             _renderer.Render(_chunk);
         }
 
+#if UNITY_EDITOR
         private void OnDrawGizmos() {
             if (!Application.isPlaying) return;
             for (int x = 0; x < _heightMap.GetLength(0); x++) {
@@ -51,6 +52,8 @@ namespace CodeBlaze.Detris.DetrisChunk {
                 }
             }
         }
+#endif
+
 
         public bool Check(Shape shape) {
             var indexes = shape.GetIndexes().ToArray();
