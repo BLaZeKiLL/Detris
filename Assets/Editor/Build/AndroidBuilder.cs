@@ -32,7 +32,7 @@ namespace Editor.Build {
         }
         
         [MenuItem("Build/Android IL2CPP Production Build")]
-        public static void ReleaseBuild() {
+        public static void ProductionBuild() {
             var pathName = $"{path}/{name}-prod.apk";
             
             FileUtil.DeleteFileOrDirectory(pathName);

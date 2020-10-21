@@ -41,3 +41,32 @@ jobs:
         with:
           name: Build
           path: build
+  build-prod:
+    name: Prod Build for ${{ matrix.targetPlatform }} with unity version ${{ matrix.unityVersion }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        unityVersion:
+          - 2020.1.9f1
+        targetPlatform:
+          - Android
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+      - uses: BLaZeKiLL/unity-builder@fix/unity-alias
+        with:
+          customImage: unityci/editor:2020.1.9f1-android-0
+          versioning: Semantic
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+          buildMethod: Editor.Build.AndroidBuilder.ProductionBuild
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build
+          path: build
