@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using CodeBlaze.Detris.Settings;
+using CodeBlaze.Detris.Shapes.Behaviour;
 using CodeBlaze.Voxel;
 
 using UnityEngine;
@@ -26,6 +27,24 @@ namespace CodeBlaze.Detris.Shapes {
 
     }
 
+    public enum ShapeType : byte {
+
+        I,
+        T,
+        L,
+        Z
+
+    }
+    
+    public enum Orientation {
+
+        ZERO,
+        NINETY,
+        ONE_EIGHTY,
+        TWO_SEVENTY
+
+    }
+    
     public static class ShapeExtensions {
 
         public static bool BoundCheck(Vector3 newPosition, Vector3 newCrossPosition) {
@@ -216,15 +235,6 @@ namespace CodeBlaze.Detris.Shapes {
 
             return indexes;
         }
-
-    }
-    
-    public enum Orientation {
-
-        ZERO,
-        NINETY,
-        ONE_EIGHTY,
-        TWO_SEVENTY
 
     }
 
